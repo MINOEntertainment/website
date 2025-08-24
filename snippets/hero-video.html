@@ -1,0 +1,36 @@
+<!-- HERO with Background VIDEO -->
+<section class="hero">
+  <!-- Background video -->
+  <div class="hero-media" aria-hidden="true" style="position:absolute; inset:0; z-index:0; overflow:hidden;">
+    <video
+      class="hero-video"
+      autoplay
+      muted
+      playsinline
+      loop
+      preload="metadata"
+      poster="/assets/images/hero/scene-1600.jpg"
+      style="width:100%; height:100%; object-fit:cover;"
+      controlslist="nodownload nofullscreen noplaybackrate"
+    >
+      <source src="/assets/videos/hero/hero-1080.webm" type="video/webm">
+      <source src="/assets/videos/hero/hero-1080.mp4"  type="video/mp4">
+      <img src="/assets/images/hero/scene-1600.jpg" alt="" width="1600" height="900">
+    </video>
+  </div>
+
+  <!-- 기존 .inner 내용은 그대로 유지 -->
+  <div class="inner" style="position:relative; z-index:2;">
+    <!-- h1, 문장, 버튼 등 기존 콘텐츠 -->
+  </div>
+</section>
+
+<!-- CSS 참고: hero ::before 그라디언트가 영상 위에 오도록 z-index 1 이상 -->
+<style>
+  .hero{ position:relative; min-height:76vh; }
+  .hero-media{ position:absolute; inset:0; z-index:0; overflow:hidden; }
+  .hero-video{ width:100%; height:100%; object-fit:cover; }
+  .hero::before{ z-index:1; } /* 기존 값이 0이었다면 1로 올리세요 */
+  .hero .inner{ position:relative; z-index:2; }
+  @media (prefers-reduced-motion: reduce){ .hero-video{ display:none; } }
+</style>
