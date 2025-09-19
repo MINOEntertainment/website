@@ -192,31 +192,27 @@ a{color:inherit} img{max-width:100%;display:block}
 <link rel="icon" href="assets/logo/logo_01.png" type="image/png"/>
 
 <style>
-/* ==== Partner logo rail — ANIM ON + VISIBLE (start-in-view) ==== */
-section.partner-rail{ --logo-height:72px; position:relative; z-index:5; }
-section.partner-rail > .partner-rail__viewport{
-  display:flex !important; align-items:center !important;
-  padding:24px 0 !important;
-  overflow:visible !important;
-  -webkit-mask-image:none !important; mask-image:none !important;
+/* ==== Partner logo rail — Final fix ==== */
+section.partner-rail {
+  --logo-height:72px;
+  position:relative; z-index:5;
+  padding:24px 0;
 }
-section.partner-rail ul.partner-rail__track{
-  display:flex !important; align-items:center !important; gap:56px !important;
-  width:max-content !important;
-  will-change: transform;
-  animation:partner-scroll 38s linear infinite !important;
+.partner-rail__viewport {
+  display:flex; align-items:center;
+  overflow:hidden; /* keep inside viewport */
+  width:100%;
 }
-section.partner-rail:hover ul.partner-rail__track{ animation-play-state:paused !important; }
-section.partner-rail ul.partner-rail__track img{
-  display:block !important; height:72px !important; width:auto !important;
-  opacity:1 !important; filter:none !important; mix-blend-mode:normal !important;
+.partner-rail__track {
+  display:flex; align-items:center; gap:56px;
+  flex-shrink:0;
+  animation: scroll-left 40s linear infinite;
 }
-section.partner-rail ul.partner-rail__track svg{ display:none !important; }
-section.partner-rail::before, section.partner-rail::after,
-section.partner-rail > .partner-rail__viewport::before,
-section.partner-rail > .partner-rail__viewport::after{ display:none !important; content:none !important; }
-/* Start in view, then move left by half (duplicate track exists) */
-@keyframes partner-scroll {
+.partner-rail__track img {
+  height:72px; width:auto;
+  display:block;
+}
+@keyframes scroll-left {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
