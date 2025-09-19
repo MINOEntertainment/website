@@ -192,17 +192,18 @@ a{color:inherit} img{max-width:100%;display:block}
 <link rel="icon" href="assets/logo/logo_01.png" type="image/png"/>
 
 <style>
-/* ==== Partner logo rail – ANIMATED VISIBLE FINAL ==== */
+/* ==== Partner logo rail — ANIM ON + VISIBLE (start-in-view) ==== */
 section.partner-rail{ --logo-height:72px; position:relative; z-index:5; }
 section.partner-rail > .partner-rail__viewport{
   display:flex !important; align-items:center !important;
   padding:24px 0 !important;
-  overflow:visible !important; /* keep visible to avoid clipping */
+  overflow:visible !important;
   -webkit-mask-image:none !important; mask-image:none !important;
 }
 section.partner-rail ul.partner-rail__track{
   display:flex !important; align-items:center !important; gap:56px !important;
   width:max-content !important;
+  will-change: transform;
   animation:partner-scroll 38s linear infinite !important;
 }
 section.partner-rail:hover ul.partner-rail__track{ animation-play-state:paused !important; }
@@ -214,8 +215,11 @@ section.partner-rail ul.partner-rail__track svg{ display:none !important; }
 section.partner-rail::before, section.partner-rail::after,
 section.partner-rail > .partner-rail__viewport::before,
 section.partner-rail > .partner-rail__viewport::after{ display:none !important; content:none !important; }
-/* seamless loop */
-@keyframes partner-scroll { to { transform: translateX(-50%); } }
+/* Start in view, then move left by half (duplicate track exists) */
+@keyframes partner-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
 </style>
 
 </head>
@@ -476,6 +480,5 @@ ${f.message.value}`);
   window.location.href = `mailto:mino@minoenter.com?subject=${subject}&body=${body}`;
 }
 </script>
-<!-- Tip: change scroll speed by editing animation duration in CSS (38s) -->
 </body>
 </html>
