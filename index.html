@@ -476,50 +476,5 @@ ${f.message.value}`);
   window.location.href = `mailto:mino@minoenter.com?subject=${subject}&body=${body}`;
 }
 </script>
-
-<script>
-/* Progressive enhancement for Netlify Forms: AJAX submit + success UI */
-(function(){
-  var form = document.getElementById('contact-form');
-  if (!form) return;
-  var statusEl = document.getElementById('contact-status');
-  function encodeForm(data){
-    var params = new URLSearchParams();
-    for (var pair of data.entries()) { params.append(pair[0], pair[1]); }
-    return params.toString();
-  }
-  // If reached with ?success=1 (non-JS submit), show message
-  try {
-    var qs = new URLSearchParams(location.search);
-    if (qs.get('success') === '1') {
-      if (statusEl) statusEl.textContent = 'Thanks! Your message was sent.';
-    }
-  } catch(e){}
-  form.addEventListener('submit', function(e){
-    // If fetch not available, allow normal post
-    if (!window.fetch) return;
-    e.preventDefault();
-    if (statusEl) statusEl.textContent = 'Sending…';
-    var data = new FormData(form);
-    // Ensure form-name included (required by Netlify)
-    if (!data.get('form-name')) data.append('form-name', form.getAttribute('name') || 'contact');
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encodeForm(data)
-    }).then(function(resp){
-      if (resp.ok) {
-        if (statusEl) statusEl.textContent = 'Thanks! Your message was sent.';
-        form.reset();
-      } else {
-        if (statusEl) statusEl.textContent = 'Sorry—failed to send. Please try again.';
-      }
-    }).catch(function(){
-      if (statusEl) statusEl.textContent = 'Sorry—failed to send. Please check your connection and try again.';
-    });
-  });
-})();
-</script>
-
 </body>
 </html>
