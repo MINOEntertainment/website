@@ -477,5 +477,42 @@ ${f.message.value}`);
   window.location.href = `mailto:mino@minoenter.com?subject=${subject}&body=${body}`;
 }
 </script>
+
+<style>
+#force-send-btn{
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999999;
+  padding: 14px 18px;
+  background: #e5484d;
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  font: 600 14px/1 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+  cursor: pointer;
+}
+#force-send-btn:hover{ filter: brightness(1.05); }
+</style>
+<button id="force-send-btn" title="Force submit contact form">Force Send</button>
+<script>
+(function(){
+  var btn = document.getElementById('force-send-btn');
+  btn.addEventListener('click', function(ev){
+    try{
+      var form = document.querySelector('form[name="contact"]');
+      if(form){
+        form.submit();
+      } else {
+        alert('Contact form not found on page.');
+      }
+    }catch(e){
+      console.warn('Force submit error', e);
+    }
+  }, true);
+})();
+</script>
+
 </body>
 </html>
