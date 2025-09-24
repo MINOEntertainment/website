@@ -479,106 +479,58 @@ ${f.message.value}`);
 </script>
 
 <script>
+// Lean production handler: keep user's values, submit even if other scripts block it.
 (function(){
-  function pick(root, selectors){
-    for (var i=0;i<selectors.length;i++){
-      var el = root.querySelector(selectors[i]);
-      if (el) return el;
-    }
-    return null;
-  }
-  function getFieldValues(){
+  function pick(root, selectors){ for (var i=0;i<selectors.length;i++){ var el=root.querySelector(selectors[i]); if(el) return el; } return null; }
+  function collect(){
     var root = document.getElementById('contact') || document;
-    var nameEl = pick(root, ['input[name="name"]','input#name','input[placeholder*="Name" i]']);
-    var emailEl = pick(root, ['input[name="email"]','input#email','input[type="email"]','input[placeholder*="Email" i]']);
-    var companyEl = pick(root, ['input[name="company"]','input#company','input[placeholder*="Company" i]']);
-    var messageEl = pick(root, ['textarea[name="message"]','textarea#message','textarea[placeholder*="Message" i]']);
+    function val(sel){ var el = pick(root, sel); return el ? (el.value||'').trim() : ''; }
     return {
-      name: nameEl ? nameEl.value.trim() : '',
-      email: emailEl ? emailEl.value.trim() : '',
-      company: companyEl ? companyEl.value.trim() : '',
-      message: messageEl ? messageEl.value.trim() : ''
+      name:    val(['input[name="name"]','input#name','input[placeholder*="Name" i]']),
+      email:   val(['input[name="email"]','input#email','input[type="email"]','input[placeholder*="Email" i]']),
+      company: val(['input[name="company"]','input#company','input[placeholder*="Company" i]']),
+      message: val(['textarea[name="message"]','textarea#message','textarea[placeholder*="Message" i]'])
     };
   }
-  function buildHiddenForm(values){
-    var form = document.createElement('form');
-    form.name = 'contact';
-    form.method = 'POST';
-    form.setAttribute('data-netlify','true');
-    form.action = '/thanks.html';
-    form.style.display = 'none';
-    function add(name, value){
-      var input;
-      if (name === 'message'){
-        input = document.createElement('textarea');
-      } else {
-        input = document.createElement('input');
-        input.type = (name === 'email') ? 'email' : 'text';
+  function ensureNetlifyForm(values){
+    var form = document.querySelector('form[name="contact"][data-netlify]');
+    if (form){
+      ['name','email','company','message'].forEach(function(k){
+        var el = form.querySelector('[name="'+k+'"]');
+        if (el && values[k]) el.value = values[k];
+      });
+      if (!form.querySelector('input[name="form-name"]')){
+        var h=document.createElement('input'); h.type='hidden'; h.name='form-name'; h.value='contact'; form.appendChild(h);
       }
-      input.name = name;
-      input.value = value;
-      form.appendChild(input);
+      form.method='POST'; form.action='/thanks.html';
+      return form;
     }
-    var h = document.createElement('input'); h.type='hidden'; h.name='form-name'; h.value='contact'; form.appendChild(h);
-    add('name', values.name || '(auto)');
-    add('email', values.email || 'auto@example.com');
-    add('company', values.company || '');
-    add('message', values.message || '(auto) Fallback submission');
-    document.body.appendChild(form);
-    return form;
+    // build hidden fallback
+    form = document.createElement('form');
+    form.name='contact'; form.method='POST'; form.action='/thanks.html'; form.setAttribute('data-netlify','true'); form.style.display='none';
+    var h=document.createElement('input'); h.type='hidden'; h.name='form-name'; h.value='contact'; form.appendChild(h);
+    function add(n,v,t){ var el=t==='textarea'?document.createElement('textarea'):document.createElement('input'); if(t!=='textarea') el.type=(n==='email')?'email':'text'; el.name=n; el.value=v; if(t==='textarea') el.textContent=v; form.appendChild(el); }
+    add('name',values.name); add('email',values.email); add('company',values.company); add('message',values.message,'textarea');
+    document.body.appendChild(form); return form;
   }
-  function forceSend(){
-    var vals = getFieldValues();
-    var form = document.querySelector('form[name="contact"]');
-    // If there is an actual Netlify-ready form, try to put values into it:
-    if (form && form.hasAttribute('data-netlify')){
-      try{
-        ['name','email','company','message'].forEach(function(k){
-          var el = form.querySelector('[name="'+k+'"]');
-          if (el && vals[k]) el.value = vals[k];
-        });
-        form.action = '/thanks.html';
-        form.method = 'POST';
-        if (!form.querySelector('input[name="form-name"]')){
-          var h = document.createElement('input'); h.type='hidden'; h.name='form-name'; h.value='contact';
-          form.appendChild(h);
-        }
-        form.submit();
-        return;
-      }catch(e){}
-    }
-    // Otherwise, create a hidden Netlify form with the collected values.
-    buildHiddenForm(vals).submit();
-  }
-
-  // Create floating button (if not exists)
-  if (!document.getElementById('force-send-btn')){
-    var css = document.createElement('style');
-    css.textContent = '#force-send-btn{position:fixed;bottom:24px;right:24px;z-index:999999;padding:14px 18px;background:#e5484d;color:#fff;border:0;border-radius:10px;font:600 14px/1 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer;}#force-send-btn:hover{filter:brightness(1.05);}';
-    document.head.appendChild(css);
-    var btn = document.createElement('button');
-    btn.id = 'force-send-btn';
-    btn.type = 'button';
-    btn.textContent = 'Force Send';
-    btn.title = 'Force submit contact form';
-    document.body.appendChild(btn);
-    btn.addEventListener('click', function(){ forceSend(); }, true);
-  }
-
-  // Also attach to any visible "Send Request" button inside #contact
+  // Capture submit on contact area
   var root = document.getElementById('contact') || document;
-  var possibleButtons = root.querySelectorAll('button, input[type="submit"]');
-  possibleButtons.forEach(function(b){
-    var label = (b.textContent || b.value || '').toLowerCase().trim();
-    if (label.includes('send')){
-      b.addEventListener('click', function(e){
-        e.preventDefault(); e.stopImmediatePropagation();
-        forceSend();
-      }, true);
-    }
-  });
+  var formEl = document.querySelector('form[name="contact"]') || root.querySelector('form');
+  function handler(e){
+    var f = ensureNetlifyForm(collect());
+    // If someone prevented default, or the form is not our ensured one, force submit
+    if (e && e.defaultPrevented){ e.stopImmediatePropagation(); }
+    try { f.submit(); } catch(_){}
+    if (e){ e.preventDefault(); }
+  }
+  if (formEl){
+    formEl.addEventListener('submit', handler, true);
+    // Also attach to any obvious "send" button in the section (defensive)
+    [].slice.call(root.querySelectorAll('button, input[type="submit"]')).forEach(function(b){
+      var t=(b.textContent||b.value||'').toLowerCase(); if(t.indexOf('send')>-1){ b.addEventListener('click', handler, true); }
+    });
+  }
 })();
 </script>
-
 </body>
 </html>
