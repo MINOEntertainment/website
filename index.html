@@ -190,6 +190,34 @@ a{color:inherit} img{max-width:100%;display:block}
 
 </style>
 <link rel="icon" href="assets/logo/logo_01.png" type="image/png"/>
+
+<style>
+/* ==== Partner logo rail — Final fix ==== */
+section.partner-rail {
+  --logo-height:72px;
+  position:relative; z-index:5;
+  padding:24px 0;
+}
+.partner-rail__viewport {
+  display:flex; align-items:center;
+  overflow:hidden; /* keep inside viewport */
+  width:100%;
+}
+.partner-rail__track {
+  display:flex; align-items:center; gap:56px;
+  flex-shrink:0;
+  animation: scroll-left 40s linear infinite;
+}
+.partner-rail__track img {
+  height:72px; width:auto;
+  display:block;
+}
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+</style>
+
 </head>
 <body>
 <header class="header">
@@ -223,85 +251,56 @@ a{color:inherit} img{max-width:100%;display:block}
 </div>
 </div>
 </section>
+
 <section class="partner-rail" aria-label="Our partners">
   <div class="partner-rail__viewport">
     <ul class="partner-rail__track">
-      <li><svg viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo">
-  <rect x="1" y="1" width="118" height="28" rx="5" ry="5" fill="none" stroke="currentColor" opacity=".6"/>
-  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="14" fill="currentColor" opacity=".9"
-    style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">LOGO</text>
-</svg></li>
-      <li><svg viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo">
-  <rect x="1" y="1" width="118" height="28" rx="5" ry="5" fill="none" stroke="currentColor" opacity=".6"/>
-  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="14" fill="currentColor" opacity=".9"
-    style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">LOGO</text>
-</svg></li>
-      <li><svg viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo">
-  <rect x="1" y="1" width="118" height="28" rx="5" ry="5" fill="none" stroke="currentColor" opacity=".6"/>
-  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="14" fill="currentColor" opacity=".9"
-    style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">LOGO</text>
-</svg></li>
-      <li><svg viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo">
-  <rect x="1" y="1" width="118" height="28" rx="5" ry="5" fill="none" stroke="currentColor" opacity=".6"/>
-  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="14" fill="currentColor" opacity=".9"
-    style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">LOGO</text>
-</svg></li>
-      <li><svg viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo">
-  <rect x="1" y="1" width="118" height="28" rx="5" ry="5" fill="none" stroke="currentColor" opacity=".6"/>
-  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="14" fill="currentColor" opacity=".9"
-    style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">LOGO</text>
-</svg></li>
-      <li><svg viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo">
-  <rect x="1" y="1" width="118" height="28" rx="5" ry="5" fill="none" stroke="currentColor" opacity=".6"/>
-  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="14" fill="currentColor" opacity=".9"
-    style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">LOGO</text>
-</svg></li>
-      <li><svg viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo">
-  <rect x="1" y="1" width="118" height="28" rx="5" ry="5" fill="none" stroke="currentColor" opacity=".6"/>
-  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="14" fill="currentColor" opacity=".9"
-    style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">LOGO</text>
-</svg></li>
+      <li><img src="assets/images/logos/logo_01.png" alt="Logo 1"></li>
+      <li><img src="assets/images/logos/logo_02.png" alt="Logo 2"></li>
+      <li><img src="assets/images/logos/logo_03.png" alt="Logo 3"></li>
+      <li><img src="assets/images/logos/logo_04.png" alt="Logo 4"></li>
+      <li><img src="assets/images/logos/logo_05.png" alt="Logo 5"></li>
+      <li><img src="assets/images/logos/logo_06.png" alt="Logo 6"></li>
+      <li><img src="assets/images/logos/logo_07.png" alt="Logo 7"></li>
+      <li><img src="assets/images/logos/logo_08.png" alt="Logo 8"></li>
+      <li><img src="assets/images/logos/logo_09.png" alt="Logo 9"></li>
+      <li><img src="assets/images/logos/logo_10.png" alt="Logo 10"></li>
+      <li><img src="assets/images/logos/logo_11.png" alt="Logo 11"></li>
+      <li><img src="assets/images/logos/logo_12.png" alt="Logo 12"></li>
+      <li><img src="assets/images/logos/logo_13.png" alt="Logo 13"></li>
+      <li><img src="assets/images/logos/logo_14.png" alt="Logo 14"></li>
+      <li><img src="assets/images/logos/logo_15.png" alt="Logo 15"></li>
+      <li><img src="assets/images/logos/logo_16.png" alt="Logo 16"></li>
+      <li><img src="assets/images/logos/logo_17.png" alt="Logo 17"></li>
+      <li><img src="assets/images/logos/logo_18.png" alt="Logo 18"></li>
+      <li><img src="assets/images/logos/logo_19.png" alt="Logo 19"></li>
+      <li><img src="assets/images/logos/logo_20.png" alt="Logo 20"></li>
     </ul>
-    <!-- duplicate for seamless loop -->
     <ul class="partner-rail__track" aria-hidden="true">
-      <li><svg viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo">
-  <rect x="1" y="1" width="118" height="28" rx="5" ry="5" fill="none" stroke="currentColor" opacity=".6"/>
-  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="14" fill="currentColor" opacity=".9"
-    style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">LOGO</text>
-</svg></li>
-      <li><svg viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo">
-  <rect x="1" y="1" width="118" height="28" rx="5" ry="5" fill="none" stroke="currentColor" opacity=".6"/>
-  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="14" fill="currentColor" opacity=".9"
-    style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">LOGO</text>
-</svg></li>
-      <li><svg viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo">
-  <rect x="1" y="1" width="118" height="28" rx="5" ry="5" fill="none" stroke="currentColor" opacity=".6"/>
-  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="14" fill="currentColor" opacity=".9"
-    style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">LOGO</text>
-</svg></li>
-      <li><svg viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo">
-  <rect x="1" y="1" width="118" height="28" rx="5" ry="5" fill="none" stroke="currentColor" opacity=".6"/>
-  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="14" fill="currentColor" opacity=".9"
-    style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">LOGO</text>
-</svg></li>
-      <li><svg viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo">
-  <rect x="1" y="1" width="118" height="28" rx="5" ry="5" fill="none" stroke="currentColor" opacity=".6"/>
-  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="14" fill="currentColor" opacity=".9"
-    style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">LOGO</text>
-</svg></li>
-      <li><svg viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo">
-  <rect x="1" y="1" width="118" height="28" rx="5" ry="5" fill="none" stroke="currentColor" opacity=".6"/>
-  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="14" fill="currentColor" opacity=".9"
-    style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">LOGO</text>
-</svg></li>
-      <li><svg viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo">
-  <rect x="1" y="1" width="118" height="28" rx="5" ry="5" fill="none" stroke="currentColor" opacity=".6"/>
-  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="14" fill="currentColor" opacity=".9"
-    style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">LOGO</text>
-</svg></li>
+      <li><img src="assets/images/logos/logo_01.png" alt=""></li>
+      <li><img src="assets/images/logos/logo_02.png" alt=""></li>
+      <li><img src="assets/images/logos/logo_03.png" alt=""></li>
+      <li><img src="assets/images/logos/logo_04.png" alt=""></li>
+      <li><img src="assets/images/logos/logo_05.png" alt=""></li>
+      <li><img src="assets/images/logos/logo_06.png" alt=""></li>
+      <li><img src="assets/images/logos/logo_07.png" alt=""></li>
+      <li><img src="assets/images/logos/logo_08.png" alt=""></li>
+      <li><img src="assets/images/logos/logo_09.png" alt=""></li>
+      <li><img src="assets/images/logos/logo_10.png" alt=""></li>
+      <li><img src="assets/images/logos/logo_11.png" alt=""></li>
+      <li><img src="assets/images/logos/logo_12.png" alt=""></li>
+      <li><img src="assets/images/logos/logo_13.png" alt=""></li>
+      <li><img src="assets/images/logos/logo_14.png" alt=""></li>
+      <li><img src="assets/images/logos/logo_15.png" alt=""></li>
+      <li><img src="assets/images/logos/logo_16.png" alt=""></li>
+      <li><img src="assets/images/logos/logo_17.png" alt=""></li>
+      <li><img src="assets/images/logos/logo_18.png" alt=""></li>
+      <li><img src="assets/images/logos/logo_19.png" alt=""></li>
+      <li><img src="assets/images/logos/logo_20.png" alt=""></li>
     </ul>
   </div>
 </section>
+
 
 <!-- SERVICES -->
 <section aria-label="Services" class="section" id="services">
@@ -479,58 +478,86 @@ ${f.message.value}`);
 </script>
 
 <script>
-// Lean production handler: keep user's values, submit even if other scripts block it.
 (function(){
-  function pick(root, selectors){ for (var i=0;i<selectors.length;i++){ var el=root.querySelector(selectors[i]); if(el) return el; } return null; }
+  function pick(root, sel){
+    for (var i=0;i<sel.length;i++){ var el=root.querySelector(sel[i]); if(el) return el; }
+    return null;
+  }
   function collect(){
     var root = document.getElementById('contact') || document;
-    function val(sel){ var el = pick(root, sel); return el ? (el.value||'').trim() : ''; }
+    function v(a){ var el = pick(root, a); return el ? (el.value||'').trim() : ''; }
     return {
-      name:    val(['input[name="name"]','input#name','input[placeholder*="Name" i]']),
-      email:   val(['input[name="email"]','input#email','input[type="email"]','input[placeholder*="Email" i]']),
-      company: val(['input[name="company"]','input#company','input[placeholder*="Company" i]']),
-      message: val(['textarea[name="message"]','textarea#message','textarea[placeholder*="Message" i]'])
+      name:    v(['input[name="name"]','input#name','input[placeholder*="Name" i]']),
+      email:   v(['input[name="email"]','input#email','input[type="email"]','input[placeholder*="Email" i]']),
+      company: v(['input[name="company"]','input#company','input[placeholder*="Company" i]']),
+      message: v(['textarea[name="message"]','textarea#message','textarea[placeholder*="Message" i]'])
     };
   }
-  function ensureNetlifyForm(values){
-    var form = document.querySelector('form[name="contact"][data-netlify]');
+  function qsEncode(obj){
+    var p=new URLSearchParams(); for (var k in obj){ if (obj[k]!=null) p.append(k,obj[k]); } return p.toString();
+  }
+  function showToast(){
+    var bd=document.getElementById('contact-toast-backdrop');
+    var ok=document.getElementById('toast-ok');
+    if(!bd) return;
+    bd.style.display='flex'; bd.removeAttribute('aria-hidden'); ok && ok.focus();
+    function hide(){ bd.style.display='none'; bd.setAttribute('aria-hidden','true'); }
+    ok && ok.addEventListener('click', hide, {once:true});
+    bd.addEventListener('click', function(e){ if(e.target===bd) hide(); }, {once:true});
+    document.addEventListener('keydown', function esc(e){ if(e.key==='Escape'){ hide(); } }, {once:true});
+  }
+  function ensureForm(){
+    // Prefer an existing Netlify form if present
+    var form = document.querySelector('form[name="contact"]') || (document.getElementById('contact')||document).querySelector('form');
     if (form){
-      ['name','email','company','message'].forEach(function(k){
-        var el = form.querySelector('[name="'+k+'"]');
-        if (el && values[k]) el.value = values[k];
-      });
+      if (!form.hasAttribute('data-netlify')) form.setAttribute('data-netlify','true');
       if (!form.querySelector('input[name="form-name"]')){
         var h=document.createElement('input'); h.type='hidden'; h.name='form-name'; h.value='contact'; form.appendChild(h);
       }
-      form.method='POST'; form.action='/thanks.html';
       return form;
     }
-    // build hidden fallback
-    form = document.createElement('form');
-    form.name='contact'; form.method='POST'; form.action='/thanks.html'; form.setAttribute('data-netlify','true'); form.style.display='none';
+    // Otherwise create a hidden one
+    form=document.createElement('form');
+    form.name='contact'; form.method='POST'; form.setAttribute('data-netlify','true');
+    form.style.display='none';
     var h=document.createElement('input'); h.type='hidden'; h.name='form-name'; h.value='contact'; form.appendChild(h);
-    function add(n,v,t){ var el=t==='textarea'?document.createElement('textarea'):document.createElement('input'); if(t!=='textarea') el.type=(n==='email')?'email':'text'; el.name=n; el.value=v; if(t==='textarea') el.textContent=v; form.appendChild(el); }
-    add('name',values.name); add('email',values.email); add('company',values.company); add('message',values.message,'textarea');
-    document.body.appendChild(form); return form;
+    document.body.appendChild(form);
+    return form;
   }
-  // Capture submit on contact area
-  var root = document.getElementById('contact') || document;
-  var formEl = document.querySelector('form[name="contact"]') || root.querySelector('form');
-  function handler(e){
-    var f = ensureNetlifyForm(collect());
-    // If someone prevented default, or the form is not our ensured one, force submit
-    if (e && e.defaultPrevented){ e.stopImmediatePropagation(); }
-    try { f.submit(); } catch(_){}
-    if (e){ e.preventDefault(); }
-  }
-  if (formEl){
-    formEl.addEventListener('submit', handler, true);
-    // Also attach to any obvious "send" button in the section (defensive)
-    [].slice.call(root.querySelectorAll('button, input[type="submit"]')).forEach(function(b){
-      var t=(b.textContent||b.value||'').toLowerCase(); if(t.indexOf('send')>-1){ b.addEventListener('click', handler, true); }
+  function attach(){
+    var root=document.getElementById('contact')||document;
+    var form=document.querySelector('form[name="contact"]')||root.querySelector('form')||ensureForm();
+    // Capture-phase so we run before any preventDefault
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var vals=collect();
+      // build payload expected by Netlify
+      var payload=Object.assign({"form-name":"contact"}, vals);
+      fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:qsEncode(payload) })
+        .then(function(resp){
+          if(resp && resp.ok){ try{form.reset();}catch(_){ } showToast(); }
+          else{ try{ form.submit(); }catch(_){ } }
+        })
+        .catch(function(){ try{ form.submit(); }catch(_){ } });
+    }, true);
+    // Also intercept "Send" buttons in the contact area
+    var btns=[].slice.call(root.querySelectorAll('button, input[type="submit"]'));
+    btns.forEach(function(b){
+      var t=(b.textContent||b.value||'').toLowerCase();
+      if(t.indexOf('send')>-1){
+        b.addEventListener('click', function(ev){
+          // let the form's submit handler do the work
+        }, true);
+      }
     });
   }
+  // Inject toast markup if not present
+  if(!document.getElementById('contact-toast-backdrop')){
+    var wrap=document.createElement('div'); wrap.innerHTML='\n<style>\n#contact-toast-backdrop{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.5);z-index:999999}\n#contact-toast{background:#121212;color:#fff;max-width:520px;width:92%;border-radius:14px;box-shadow:0 24px 70px rgba(0,0,0,.45);}\n#contact-toast header{padding:16px 18px 0;font:600 18px/1.35 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}\n#contact-toast .body{padding:12px 18px 18px;font:400 15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;opacity:.92}\n#contact-toast .actions{padding:0 18px 18px;display:flex;gap:10px;justify-content:flex-end}\n#contact-toast .actions button{appearance:none;border:0;border-radius:10px;padding:10px 14px;font-weight:600;cursor:pointer}\n#toast-ok{background:#18a34a;color:#fff}\n#toast-ok:focus{outline:2px solid #ffffff88;outline-offset:2px}\n</style>\n<div id="contact-toast-backdrop" role="dialog" aria-modal="true" aria-labelledby="contact-toast-title" aria-hidden="true">\n  <div id="contact-toast">\n    <header id="contact-toast-title">문의가 전송되었습니다</header>\n    <div class="body">감사합니다. 24시간 이내에 답장드리겠습니다.</div>\n    <div class="actions">\n      <button id="toast-ok">확인</button>\n    </div>\n  </div>\n</div>\n'; document.body.appendChild(wrap);
+  }
+  attach();
 })();
 </script>
+
 </body>
 </html>
