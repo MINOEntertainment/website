@@ -276,6 +276,42 @@ section.partner-rail {
 
 </style>
 
+<style>
+/* ===== Poster-style portfolio (sharp corners, yellow meta, white title) ===== */
+#portfolio .grid { gap: 24px; }
+#portfolio .poster-card{
+  display: grid;
+  gap: 10px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+#portfolio .poster-card .poster{
+  width:100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  display:block;
+  border-radius: 0;
+  box-shadow: 0 0 0 1px #242424;
+}
+#portfolio .poster-card .meta{
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffd54a; /* 노란색 */
+  letter-spacing: .2px;
+}
+#portfolio .poster-card .name{
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+}
+/* Disable previous tile styles inside portfolio when poster-card is used */
+#portfolio .poster-card .caption,
+#portfolio .poster-card .ov { display:none !important; }
+#portfolio .poster-card.tile { border:0 !important; border-radius:0 !important; overflow:visible !important; background:transparent !important; }
+#portfolio .poster-card.tile img { filter:none !important; transition:none !important; }
+</style>
 </head>
 <body>
 <header class="header">
@@ -421,9 +457,97 @@ section.partner-rail {
 <h2 class="reveal">Latest Projects</h2>
 <p class="lead reveal" style="transition-delay:.05s">Flagship reference: KRAFTON — inZOI environment modeling partner (early development to present).</p>
 <div class="grid">
-<!-- inZOI 대표 카드 -->
-<div class="tile reveal">
-  <div class="thumb"><img alt="KRAFTON inZOI" src="assets/images/projects/project_01.jpg"/></div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_01.jpg" alt="KRAFTON — inZOI poster"/>
+  <div class="meta">Korea · KRAFTON</div>
+  <div class="name">KRAFTON — inZOI</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_02.jpg" alt="LIONGAMES poster"/>
+  <div class="meta">Korea · LIONGAMES</div>
+  <div class="name">LIONGAMES</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_03.jpg" alt="LG poster"/>
+  <div class="meta">Korea · LG</div>
+  <div class="name">LG</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_04.jpg" alt="KB Kookmin Bank poster"/>
+  <div class="meta">Korea · KB Kookmin Bank</div>
+  <div class="name">KB Kookmin Bank</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_05.jpg" alt="Larva poster"/>
+  <div class="meta">Korea · Larva</div>
+  <div class="name">Larva</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_06.jpg" alt="Airpass poster"/>
+  <div class="meta">Korea · Airpass</div>
+  <div class="name">Airpass</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_07.jpg" alt="SG Golf poster"/>
+  <div class="meta">Korea · SG Golf</div>
+  <div class="name">SG Golf</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_08.jpg" alt="MBC Show! Music Core poster"/>
+  <div class="meta">Korea · MBC</div>
+  <div class="name">MBC Show! Music Core</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_09.jpg" alt="KRAFTON — ELYON poster"/>
+  <div class="meta">Korea · KRAFTON</div>
+  <div class="name">KRAFTON — ELYON</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_10.jpg" alt="Urban Railway Gas‑Compartment poster"/>
+  <div class="meta">Korea · Urban Railway</div>
+  <div class="name">Urban Railway Gas‑Compartment</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_11.jpg" alt="Jejudo Island - Little Prince Theme Park poster"/>
+  <div class="meta">Korea · Jeju</div>
+  <div class="name">Jejudo Island - Little Prince Theme Park</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_12.jpg" alt="Gwacheon National Science Museum poster"/>
+  <div class="meta">Korea · Gwacheon Nat'l Science Museum</div>
+  <div class="name">Gwacheon National Science Museum</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_13.jpg" alt="innertainment poster"/>
+  <div class="meta">Korea · innertainment</div>
+  <div class="name">innertainment</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_14.jpg" alt="SteamVR poster"/>
+  <div class="meta">Global · SteamVR</div>
+  <div class="name">SteamVR</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_15.jpg" alt="HALLYM UNIV. MEDICAL CENTER poster"/>
+  <div class="meta">Korea · HALLYM Univ. Medical Center</div>
+  <div class="name">HALLYM UNIV. MEDICAL CENTER</div>
+</div>
+</div>
   <div class="caption">
     <div class="label"></div>
     <div class="title">KRAFTON — inZOI</div>
