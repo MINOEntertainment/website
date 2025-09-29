@@ -277,138 +277,65 @@ section.partner-rail {
 </style>
 
 <style>
-/* ===== FORCE OVERRIDES ===== */
-
-/* Hero ArtStation Button */
-#hero a[href*="artstation.com"] {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-  background: #13aff0 !important;
-  color: #fff !important;
-  font-size: 22px !important;
-  font-weight: 800 !important;
-  padding: 18px 36px !important;
-  border-radius: 8px !important;
-  text-decoration: none !important;
-  transition: background 0.2s ease, transform 0.2s ease !important;
+/* ===== FORCE Poster layout overrides (high specificity) ===== */
+section#portfolio .grid.poster-4 { 
+  display: grid !important; 
+  grid-template-columns: repeat(4, 1fr) !important; 
+  gap: 32px !important;
 }
-#hero a[href*="artstation.com"]:hover { 
-  background: #0e8dc4 !important; 
-  transform: scale(1.05) !important;
+section#portfolio .tile,
+section#portfolio .tile img,
+section#portfolio .poster-card,
+section#portfolio .poster-card .poster { 
+  border-radius: 0 !important; 
 }
-#hero a[href*="artstation.com"] img { 
-  height: 30px !important; 
-  width: auto !important; 
-  display: inline-block !important; 
+section#portfolio .poster-card .meta { 
+  color: #ffd54a !important; 
+  font-weight: 800 !important; 
+  font-size: 14px !important;
 }
-
-/* Nav ArtStation Button */
-header .nav .nav-artstation a, 
-#header nav .nav-artstation a, 
-nav .nav-artstation a {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  background: #13aff0 !important;
-  color: #fff !important;
-  font-weight: 800 !important;
-  padding: 10px 16px !important;
-  border-radius: 8px !important;
-  text-decoration: none !important;
-}
-header .nav .nav-artstation a:hover, 
-#header nav .nav-artstation a:hover, 
-nav .nav-artstation a:hover {
-  background: #0e8dc4 !important;
-}
-header .nav .nav-artstation img, 
-#header nav .nav-artstation img, 
-nav .nav-artstation img {
-  height: 18px !important;
-  width: auto !important;
-  display: inline-block !important;
+section#portfolio .poster-card .name { 
+  color: #ffffff !important; 
+  font-weight: 800 !important; 
+  font-size: 18px !important; 
+  line-height: 1.25 !important;
 }
 </style>
 <style>
-/* ===== FORCE: Right-align top nav items ===== */
-#header nav, header nav {
-  display: flex !important;
-  align-items: center !important;
-}
-#header nav > ul, header nav > ul, 
-#header nav .menu, header nav .menu {
-  display: flex !important;
-  align-items: center !important;
-  gap: 18px !important;
-  margin-left: auto !important;   /* push to the right */
-  justify-content: flex-end !important;
-}
-#header nav > ul > li, header nav > ul > li {
-  list-style: none !important;
+/* === Custom Fixes === */
+
+/* Replace left logo dot with company logo */
+.logo-dot { display:none !important; }
+.logo img.company-logo {
+  height:28px; width:auto; display:inline-block;
 }
 
-
-/* ===== FORCE: Big Hero ArtStation button (class-based) ===== */
-#hero .btn-hero-artstation {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-  background: #13aff0 !important;
-  color: #fff !important;
-  font-size: 22px !important;
-  font-weight: 800 !important;
-  padding: 18px 36px !important;
-  border-radius: 8px !important;
-  text-decoration: none !important;
-  transition: background 0.2s ease, transform 0.2s ease !important;
-}
-#hero .btn-hero-artstation:hover {
-  background: #0e8dc4 !important;
-  transform: scale(1.05) !important;
-}
-#hero .btn-hero-artstation img {
-  height: 30px !important;
-  width: auto !important;
-  display: inline-block !important;
-}
-</style>
-<style>
-/* ===== Header/Nav fixes ===== */
-#header nav ul li::before,
-header nav ul li::before,
-#header nav .menu > *::before,
-header nav .menu > *::before,
-#header .logo::before,
-header .logo::before {
-  content: none !important;
-}
-
-/* Replace any small inline dot elements */
-#header .dot, header .dot { display: none !important; }
+/* Remove nav separators (dots) */
+.nav ul li::before, .menu a::before { content:none !important; }
+.menu { gap:18px !important; }
 
 /* Hero ArtStation big button */
-#hero .btn-hero-artstation {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-  background: #13aff0 !important;
-  color: #fff !important;
-  font-size: 22px !important;
-  font-weight: 800 !important;
-  padding: 18px 36px !important;
-  border-radius: 8px !important;
-  text-decoration: none !important;
-  transition: background 0.2s ease, transform 0.2s ease !important;
+.hero .btn-hero-artstation {
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:12px !important;
+  background:#13aff0 !important;
+  color:#fff !important;
+  font-size:22px !important;
+  font-weight:800 !important;
+  padding:18px 36px !important;
+  border-radius:8px !important;
+  text-decoration:none !important;
+  transition:background .2s ease, transform .2s ease !important;
 }
-#hero .btn-hero-artstation:hover { background:#0e8dc4 !important; transform: scale(1.05) !important; }
-#hero .btn-hero-artstation img { height:30px !important; width:auto !important; display:inline-block !important; }
+.hero .btn-hero-artstation:hover { background:#0e8dc4 !important; transform:scale(1.05) !important; }
+.hero .btn-hero-artstation img { height:30px !important; width:auto !important; display:inline-block !important; }
 </style>
 </head>
 <body>
 <header class="header">
 <nav class="nav">
-<div class="logo"><span class="logo-dot"></span> Mino Entertainment</div>
+<div class="logo"><img src="assets/images/logos/company_logo.png" alt="Mino Entertainment Logo" class="company-logo"> Mino Entertainment</div>
 <div aria-controls="menu" aria-expanded="false" aria-label="Open menu" class="burger" id="burger">
 <span></span><span></span><span></span>
 </div>
@@ -418,17 +345,17 @@ header .logo::before {
 <a href="#portfolio">Portfolio</a>
 <a href="#contact" class="contact">Contact</a>
 </div>
-<li class="nav-artstation"><a href="https://www.artstation.com/minoent" target="_blank"<img src="assets/images/logos/artstation.png" alt="ArtStation logo"/> <img src="assets/images/logos/artstation.png" alt="ArtStation logo"/> ArtStation</a></li></nav>
+</nav>
 </header>
 <main id="home">
 <!-- HERO -->
 <section aria-label="Hero" class="hero" style="background:url('assets/images/hero/hero_bg.jpg') center/cover no-repeat;">
 <div class="inner">
-<span class="kicker reveal">GAME-READY 3D MODELING ENVIRONMENT CHARACTER 3D Animation</span>
+<span class="kicker reveal">GAME-READY 3D MODELING • ENVIRONMENT • CHARACTER • 3D Animation</span>
 <h1 class="reveal" style="transition-delay:.05s">Game‑Ready 3D Modeling Studio</h1>
 <p class="reveal" style="transition-delay:.1s">We deliver engine-optimized assets—PC · Console · Mobile ready—featuring efficient polygon count, draw call reduction, LOD, high-resolution PBR textures, and clean topology—ready for immediate use in your game.</p>
 <div class="actions reveal" style="transition-delay:.15s">
-<a class="btn" href="https://www.artstation.com/minoentertainment" rel="noopener" target="_blank"<img src="assets/images/logos/artstation.png" alt="ArtStation logo"/> ArtStation</a>
+<a class="btn-hero-artstation" href="https://www.artstation.com/minoentertainment" target="_blank"><img src="assets/images/logos/artstation.png" alt="ArtStation logo"/> View on ArtStation</a>
 </div>
 <div class="reveal" style="transition-delay:.2s">
 <span style="display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid #2a2a2a;border-radius:999px;background:#0f0f0f;">
@@ -548,136 +475,99 @@ header .logo::before {
 <div class="container">
 <h2 class="reveal">Latest Projects</h2>
 <p class="lead reveal" style="transition-delay:.05s">Flagship reference: KRAFTON — inZOI environment modeling partner (early development to present).</p>
-<div class="grid">
-<!-- inZOI 대표 카드 -->
-<div class="tile reveal">
-  <div class="thumb"><img alt="KRAFTON inZOI" src="assets/images/projects/project_01.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">KRAFTON — inZOI</div>
-  </div>
-</div>
-<!-- 기타 카드 -->
-<div class="tile reveal">
-  <div class="thumb"><img alt="" src="assets/images/projects/project_02.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">LIONGAMES</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="" src="assets/images/projects/project_03.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">LG</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="" src="assets/images/projects/project_04.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">KB Kookmin Bank</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="" src="assets/images/projects/project_05.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">Larva</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="" src="assets/images/projects/project_06.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">Airpass</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="" src="assets/images/projects/project_07.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">SG Golf</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="" src="assets/images/projects/project_08.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">MBC Show! Music Core</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="" src="assets/images/projects/project_09.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">KRAFTON — ELYON</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="" src="assets/images/projects/project_10.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">Urban Railway Gas‑Compartment</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="Little Prince Theme Park" src="assets/images/projects/project_11.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">Jejudo Island - Little Prince Theme Park</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="Gwacheon National Museum" src="assets/images/projects/project_12.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">Gwacheon National Science Museum</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="K-pop Idol VR FanMeeting" src="assets/images/projects/project_13.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">innertainment</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="SteamVR" src="assets/images/projects/project_14.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">SteamVR</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="HALLYM UNIV MEDICAL CENTER" src="assets/images/projects/project_15.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">HALLYM UNIV. MEDICAL CENTER</div>
-  </div>
-</div>
-</div><div class="clients-kr"><h3>Selected Clients / Projects (KR)</h3><p>Korea‑focused portfolio — multiple project names undisclosed</p><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
-<div style="background:#0b0b0b;border:1px solid #222;border-radius:10px;padding:12px">
-<b>KRAFTON — inZOI</b><br/><span style="color:var(--muted)">Environment Modeling (early stage ~ present)</span>
-</div>
-<div style="background:#0b0b0b;border:1px solid #222;border-radius:10px;padding:12px">
-<b>LIONGAMES</b><br/><span style="color:var(--muted)">Costume, Item Modeling, Rigging, 3D Animation</span>
-</div>
-<div style="background:#0b0b0b;border:1px solid #222;border-radius:10px;padding:12px">
-<b>LG</b><br/><span style="color:var(--muted)">Virtual Meeting Space</span>
-</div>
-<div style="background:#0b0b0b;border:1px solid #222;border-radius:10px;padding:12px">
-<b>SG Golf</b><br/><span style="color:var(--muted)">Golf world map Terrin & Level Design</span>
-</div>
-<div style="background:#0b0b0b;border:1px solid #222;border-radius:10px;padding:12px">
-<b>Larva</b><br/><span style="color:var(--muted)">3D Scene Composition</span>
-</div>
-<div style="background:#0b0b0b;border:1px solid #222;border-radius:10px;padding:12px">
-<b>Others</b><br/><span style="color:var(--muted)">Airpass, exbody, SG Golf, MBC Show! Music Core, Samsunglife, Jejudo Island - Little Prince Theme Park, LG Gram, Post Office, Urban Rail, Incheon-si, Gwacheon National Science Museum, SALIN, CODE REACH, FROMtheREDinnertainment, Seodaemun Prison History Hall 등</span>
-</div>
-</div></div>
+<div class="grid poster-4">
 
-</div></section>
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_01.jpg" alt="KRAFTON — inZOI poster"/>
+  <div class="meta">Korea · KRAFTON</div>
+  <div class="name">KRAFTON — inZOI</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_02.jpg" alt="LIONGAMES poster"/>
+  <div class="meta">Korea · LIONGAMES</div>
+  <div class="name">LIONGAMES</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_03.jpg" alt="LG poster"/>
+  <div class="meta">Korea · LG</div>
+  <div class="name">LG</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_04.jpg" alt="KB Kookmin Bank poster"/>
+  <div class="meta">Korea · KB Kookmin Bank</div>
+  <div class="name">KB Kookmin Bank</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_05.jpg" alt="Larva poster"/>
+  <div class="meta">Korea · Larva</div>
+  <div class="name">Larva</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_06.jpg" alt="Airpass poster"/>
+  <div class="meta">Korea · Airpass</div>
+  <div class="name">Airpass</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_07.jpg" alt="SG Golf poster"/>
+  <div class="meta">Korea · SG Golf</div>
+  <div class="name">SG Golf</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_08.jpg" alt="MBC Show! Music Core poster"/>
+  <div class="meta">Korea · MBC</div>
+  <div class="name">MBC Show! Music Core</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_09.jpg" alt="KRAFTON — ELYON poster"/>
+  <div class="meta">Korea · KRAFTON</div>
+  <div class="name">KRAFTON — ELYON</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_10.jpg" alt="Urban Railway Gas-Compartment poster"/>
+  <div class="meta">Korea · Urban Railway</div>
+  <div class="name">Urban Railway Gas-Compartment</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_11.jpg" alt="Jejudo Island - Little Prince Theme Park poster"/>
+  <div class="meta">Korea · Jeju</div>
+  <div class="name">Jejudo Island - Little Prince Theme Park</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_12.jpg" alt="Gwacheon National Science Museum poster"/>
+  <div class="meta">Korea · Gwacheon Nat'l Science Museum</div>
+  <div class="name">Gwacheon National Science Museum</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_13.jpg" alt="innertainment poster"/>
+  <div class="meta">Korea · innertainment</div>
+  <div class="name">innertainment</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_14.jpg" alt="SteamVR poster"/>
+  <div class="meta">Global · SteamVR</div>
+  <div class="name">SteamVR</div>
+</div>
+
+<div class="tile poster-card reveal">
+  <img class="poster" src="assets/images/projects/project_15.jpg" alt="HALLYM UNIV. MEDICAL CENTER poster"/>
+  <div class="meta">Korea · HALLYM Univ. Medical Center</div>
+  <div class="name">HALLYM UNIV. MEDICAL CENTER</div>
+</div>
+</div>
+</section>
 <!-- CONTACT -->
 <section aria-label="Contact" class="section" id="contact" style="background:var(--bg-3)">
 <div class="container">
@@ -697,7 +587,7 @@ header .logo::before {
 <footer class="footer">
 <div class="inner">
 <div>© <span id="year"></span> Mino Entertainment. All rights reserved.</div>
-<div>Seoul, Republic of Korea <a href="mailto:mino@minoenter.com">mino@minoenter.com</a></div>
+<div>Seoul, Republic of Korea • <a href="mailto:mino@minoenter.com">mino@minoenter.com</a></div>
 </div>
 
 <!-- Partners / Clients strip (inserted) -->
