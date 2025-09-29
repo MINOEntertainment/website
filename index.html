@@ -373,6 +373,37 @@ nav .nav-artstation img {
   display: inline-block !important;
 }
 </style>
+<style>
+/* ===== Header/Nav fixes ===== */
+#header nav ul li::before,
+header nav ul li::before,
+#header nav .menu > *::before,
+header nav .menu > *::before,
+#header .logo::before,
+header .logo::before {
+  content: none !important;
+}
+
+/* Replace any small inline dot elements */
+#header .dot, header .dot { display: none !important; }
+
+/* Hero ArtStation big button */
+#hero .btn-hero-artstation {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  background: #13aff0 !important;
+  color: #fff !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  padding: 18px 36px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  transition: background 0.2s ease, transform 0.2s ease !important;
+}
+#hero .btn-hero-artstation:hover { background:#0e8dc4 !important; transform: scale(1.05) !important; }
+#hero .btn-hero-artstation img { height:30px !important; width:auto !important; display:inline-block !important; }
+</style>
 </head>
 <body>
 <header class="header">
@@ -393,7 +424,7 @@ nav .nav-artstation img {
 <!-- HERO -->
 <section aria-label="Hero" class="hero" style="background:url('assets/images/hero/hero_bg.jpg') center/cover no-repeat;">
 <div class="inner">
-<span class="kicker reveal">GAME-READY 3D MODELING • ENVIRONMENT • CHARACTER • 3D Animation</span>
+<span class="kicker reveal">GAME-READY 3D MODELING ENVIRONMENT CHARACTER 3D Animation</span>
 <h1 class="reveal" style="transition-delay:.05s">Game‑Ready 3D Modeling Studio</h1>
 <p class="reveal" style="transition-delay:.1s">We deliver engine-optimized assets—PC · Console · Mobile ready—featuring efficient polygon count, draw call reduction, LOD, high-resolution PBR textures, and clean topology—ready for immediate use in your game.</p>
 <div class="actions reveal" style="transition-delay:.15s">
@@ -666,7 +697,7 @@ nav .nav-artstation img {
 <footer class="footer">
 <div class="inner">
 <div>© <span id="year"></span> Mino Entertainment. All rights reserved.</div>
-<div>Seoul, Republic of Korea • <a href="mailto:mino@minoenter.com">mino@minoenter.com</a></div>
+<div>Seoul, Republic of Korea <a href="mailto:mino@minoenter.com">mino@minoenter.com</a></div>
 </div>
 
 <!-- Partners / Clients strip (inserted) -->
