@@ -302,11 +302,7 @@ section#portfolio .poster-card .name {
 }
 </style>
 <style>
-/* ===== ArtStation Button ===== */
-#portfolio .artstation-btn {
-  margin: 20px 0 30px;
-  text-align: center;
-}
+
 #portfolio .artstation-btn a {
   display: inline-flex;
   align-items: center;
@@ -325,6 +321,35 @@ section#portfolio .poster-card .name {
 }
 #portfolio .artstation-btn img {
   height: 20px;
+  width: auto;
+  display: inline-block;
+}
+</style>
+<style>
+/* ===== ArtStation Button (Larger) ===== */
+#portfolio .artstation-btn {
+  margin: 30px 0 40px;
+  text-align: center;
+}
+#portfolio .artstation-btn a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #13aff0;  /* ArtStation 파랑 */
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
+  padding: 16px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+#portfolio .artstation-btn a:hover {
+  background: #0e8dc4;
+  transform: scale(1.05);
+}
+#portfolio .artstation-btn img {
+  height: 28px;
   width: auto;
   display: inline-block;
 }
