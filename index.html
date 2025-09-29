@@ -276,6 +276,31 @@ section.partner-rail {
 
 </style>
 
+<style>
+/* ===== FORCE Poster layout overrides (high specificity) ===== */
+section#portfolio .grid.poster-4 { 
+  display: grid !important; 
+  grid-template-columns: repeat(4, 1fr) !important; 
+  gap: 32px !important;
+}
+section#portfolio .tile,
+section#portfolio .tile img,
+section#portfolio .poster-card,
+section#portfolio .poster-card .poster { 
+  border-radius: 0 !important; 
+}
+section#portfolio .poster-card .meta { 
+  color: #ffd54a !important; 
+  font-weight: 800 !important; 
+  font-size: 14px !important;
+}
+section#portfolio .poster-card .name { 
+  color: #ffffff !important; 
+  font-weight: 800 !important; 
+  font-size: 18px !important; 
+  line-height: 1.25 !important;
+}
+</style>
 </head>
 <body>
 <header class="header">
@@ -420,7 +445,7 @@ section.partner-rail {
 <div class="container">
 <h2 class="reveal">Latest Projects</h2>
 <p class="lead reveal" style="transition-delay:.05s">Flagship reference: KRAFTON — inZOI environment modeling partner (early development to present).</p>
-<div class="grid">
+<div class="grid poster-4">
 
 <div class="tile poster-card reveal">
   <img class="poster" src="assets/images/projects/project_01.jpg" alt="KRAFTON — inZOI poster"/>
