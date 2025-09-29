@@ -331,6 +331,27 @@ section#portfolio .poster-card .name {
 .hero .btn-hero-artstation:hover { background:#0e8dc4 !important; transform:scale(1.05) !important; }
 .hero .btn-hero-artstation img { height:30px !important; width:auto !important; display:inline-block !important; }
 </style>
+<style>
+/* === ArtStation Buttons (Nav + Portfolio) === */
+.nav-artstation a {
+  display:inline-flex; align-items:center; gap:6px;
+  background:#13aff0; color:#fff; font-weight:800;
+  padding:10px 16px; border-radius:8px; text-decoration:none;
+  transition:background .2s ease;
+}
+.nav-artstation a:hover { background:#0e8dc4; }
+.nav-artstation img { height:18px; width:auto; display:inline-block; }
+
+#portfolio .artstation-btn { margin: 20px 0 30px; text-align:center; }
+#portfolio .artstation-btn a {
+  display:inline-flex; align-items:center; gap:10px;
+  background:#13aff0; color:#fff; font-size:18px; font-weight:800;
+  padding:14px 28px; border-radius:10px; text-decoration:none;
+  transition:background .2s ease, transform .2s ease;
+}
+#portfolio .artstation-btn a:hover { background:#0e8dc4; transform:scale(1.03); }
+#portfolio .artstation-btn img { height:24px; width:auto; display:inline-block; }
+</style>
 </head>
 <body>
 <header class="header">
@@ -388,7 +409,7 @@ section#portfolio .poster-card .name {
       <li><img src="assets/images/logos/logo_18.png" alt="Logo 18"></li>
       <li><img src="assets/images/logos/logo_19.png" alt="Logo 19"></li>
       <li><img src="assets/images/logos/logo_20.png" alt="Logo 20"></li>
-    </ul>
+    <li class="nav-artstation"><a href="https://www.artstation.com/minoent" target="_blank"><img src="assets/images/logos/artstation.png" alt="ArtStation logo"/> ArtStation</a></li></ul>
     <ul class="partner-rail__track" aria-hidden="true">
       <li><img src="assets/images/logos/logo_01.png" alt=""></li>
       <li><img src="assets/images/logos/logo_02.png" alt=""></li>
@@ -475,6 +496,12 @@ section#portfolio .poster-card .name {
 <div class="container">
 <h2 class="reveal">Latest Projects</h2>
 <p class="lead reveal" style="transition-delay:.05s">Flagship reference: KRAFTON — inZOI environment modeling partner (early development to present).</p>
+  <div class="artstation-btn">
+    <a href="https://www.artstation.com/minoent" target="_blank">
+      <img src="assets/images/logos/artstation.png" alt="ArtStation logo"/> View More on ArtStation
+    </a>
+  </div>
+
 <div class="grid poster-4">
 
 <div class="tile poster-card reveal">
