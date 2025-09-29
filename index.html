@@ -354,6 +354,53 @@ section#portfolio .poster-card .name {
   display: inline-block;
 }
 </style>
+<style>
+/* ===== Hero ArtStation Button (Larger) ===== */
+#hero .btn-artstation {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #13aff0;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 800;
+  padding: 18px 36px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+#hero .btn-artstation:hover {
+  background: #0e8dc4;
+  transform: scale(1.05);
+}
+#hero .btn-artstation img {
+  height: 30px;
+  width: auto;
+  display: inline-block;
+}
+</style>
+<style>
+/* ===== Nav ArtStation Button ===== */
+.nav-artstation a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #13aff0;
+  color: #fff !important;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+.nav-artstation a:hover {
+  background: #0e8dc4;
+}
+.nav-artstation img {
+  height: 16px;
+  width: auto;
+  display: inline-block;
+}
+</style>
 </head>
 <body>
 <header class="header">
@@ -499,7 +546,7 @@ section#portfolio .poster-card .name {
 <h2 class="reveal">Latest Projects</h2>
 <p class="lead reveal" style="transition-delay:.05s">Flagship reference: KRAFTON — inZOI environment modeling partner (early development to present).</p>
   <div class="artstation-btn">
-    <a href="https://www.artstation.com/minoent" target="_blank">
+    <a class="btn-artstation" href="https://www.artstation.com/minoent" target="_blank">
       <img src="assets/images/logos/artstation.png" alt="ArtStation logo"/> View More on ArtStation
     </a>
   </div>
