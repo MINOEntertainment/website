@@ -229,89 +229,8 @@ section.partner-rail {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
-
-/* ===== Portfolio (static cards, no hover effects) ===== */
-#portfolio .grid::after,
-#portfolio .grid:hover::after,
-#portfolio .grid:focus-within::after { display:none !important; opacity:0 !important; }
-#portfolio .grid .grid-cta { display:none !important; }
-#portfolio .tile img { filter:none !important; transition:none !important; }
-#portfolio .tile:hover img { filter:none !important; }
-#portfolio .tile .ov { display:none !important; }
-
-#portfolio .tile {
-  background: var(--card);
-  border: 1px solid #222;
-  border-radius: 14px;
-  overflow: hidden;
-  display: grid;
-  gap: 0;
-}
-
-#portfolio .tile .thumb img {
-  width: 100%;
-  height: auto;
-  display: block;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-}
-
-#portfolio .tile .caption {
-  padding: 10px 12px 12px;
-}
-
-#portfolio .tile .caption .label {
-  color: var(--accent);
-  font-size: 13px;
-  margin-bottom: 6px;
-}
-
-#portfolio .tile .caption .label:empty { display: none; }
-
-#portfolio .tile .caption .title {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.3;
-}
-
 </style>
 
-<style>
-/* ===== Poster-style portfolio (sharp corners, yellow meta, white title) ===== */
-#portfolio .grid { gap: 24px; }
-#portfolio .poster-card{
-  display: grid;
-  gap: 10px;
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-}
-#portfolio .poster-card .poster{
-  width:100%;
-  aspect-ratio: 2/3;
-  object-fit: cover;
-  display:block;
-  border-radius: 0;
-  box-shadow: 0 0 0 1px #242424;
-}
-#portfolio .poster-card .meta{
-  font-size: 14px;
-  font-weight: 700;
-  color: #ffd54a; /* 노란색 */
-  letter-spacing: .2px;
-}
-#portfolio .poster-card .name{
-  font-size: 22px;
-  font-weight: 800;
-  color: #fff;
-  line-height: 1.15;
-}
-/* Disable previous tile styles inside portfolio when poster-card is used */
-#portfolio .poster-card .caption,
-#portfolio .poster-card .ov { display:none !important; }
-#portfolio .poster-card.tile { border:0 !important; border-radius:0 !important; overflow:visible !important; background:transparent !important; }
-#portfolio .poster-card.tile img { filter:none !important; transition:none !important; }
-</style>
 </head>
 <body>
 <header class="header">
@@ -457,202 +376,42 @@ section.partner-rail {
 <h2 class="reveal">Latest Projects</h2>
 <p class="lead reveal" style="transition-delay:.05s">Flagship reference: KRAFTON — inZOI environment modeling partner (early development to present).</p>
 <div class="grid">
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_01.jpg" alt="KRAFTON — inZOI poster"/>
-  <div class="meta">Korea · KRAFTON</div>
-  <div class="name">KRAFTON — inZOI</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_02.jpg" alt="LIONGAMES poster"/>
-  <div class="meta">Korea · LIONGAMES</div>
-  <div class="name">LIONGAMES</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_03.jpg" alt="LG poster"/>
-  <div class="meta">Korea · LG</div>
-  <div class="name">LG</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_04.jpg" alt="KB Kookmin Bank poster"/>
-  <div class="meta">Korea · KB Kookmin Bank</div>
-  <div class="name">KB Kookmin Bank</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_05.jpg" alt="Larva poster"/>
-  <div class="meta">Korea · Larva</div>
-  <div class="name">Larva</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_06.jpg" alt="Airpass poster"/>
-  <div class="meta">Korea · Airpass</div>
-  <div class="name">Airpass</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_07.jpg" alt="SG Golf poster"/>
-  <div class="meta">Korea · SG Golf</div>
-  <div class="name">SG Golf</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_08.jpg" alt="MBC Show! Music Core poster"/>
-  <div class="meta">Korea · MBC</div>
-  <div class="name">MBC Show! Music Core</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_09.jpg" alt="KRAFTON — ELYON poster"/>
-  <div class="meta">Korea · KRAFTON</div>
-  <div class="name">KRAFTON — ELYON</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_10.jpg" alt="Urban Railway Gas‑Compartment poster"/>
-  <div class="meta">Korea · Urban Railway</div>
-  <div class="name">Urban Railway Gas‑Compartment</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_11.jpg" alt="Jejudo Island - Little Prince Theme Park poster"/>
-  <div class="meta">Korea · Jeju</div>
-  <div class="name">Jejudo Island - Little Prince Theme Park</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_12.jpg" alt="Gwacheon National Science Museum poster"/>
-  <div class="meta">Korea · Gwacheon Nat'l Science Museum</div>
-  <div class="name">Gwacheon National Science Museum</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_13.jpg" alt="innertainment poster"/>
-  <div class="meta">Korea · innertainment</div>
-  <div class="name">innertainment</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_14.jpg" alt="SteamVR poster"/>
-  <div class="meta">Global · SteamVR</div>
-  <div class="name">SteamVR</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_15.jpg" alt="HALLYM UNIV. MEDICAL CENTER poster"/>
-  <div class="meta">Korea · HALLYM Univ. Medical Center</div>
-  <div class="name">HALLYM UNIV. MEDICAL CENTER</div>
-</div>
-</div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">KRAFTON — inZOI</div>
-  </div>
-</div>
+<!-- inZOI 대표 카드 -->
+<a aria-label="KRAFTON inZOI" class="tile reveal" href="https://www.artstation.com/minoentertainment" target="_blank" style="z-index:1">
+<img alt="KRAFTON inZOI" src="assets/images/projects/project_01.jpg"/>
+<div class="ov"><h3>KRAFTON — inZOI</h3><p>Environment Modeling Partner</p></div>
+</a>
 <!-- 기타 카드 -->
-<div class="tile reveal">
-  <div class="thumb"><img alt="" src="assets/images/projects/project_02.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">LIONGAMES</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="" src="assets/images/projects/project_03.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">LG</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="" src="assets/images/projects/project_04.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">KB Kookmin Bank</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="" src="assets/images/projects/project_05.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">Larva</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="" src="assets/images/projects/project_06.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">Airpass</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="" src="assets/images/projects/project_07.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">SG Golf</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="" src="assets/images/projects/project_08.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">MBC Show! Music Core</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="" src="assets/images/projects/project_09.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">KRAFTON — ELYON</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="" src="assets/images/projects/project_10.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">Urban Railway Gas‑Compartment</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="Little Prince Theme Park" src="assets/images/projects/project_11.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">Jejudo Island - Little Prince Theme Park</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="Gwacheon National Museum" src="assets/images/projects/project_12.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">Gwacheon National Science Museum</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="K-pop Idol VR FanMeeting" src="assets/images/projects/project_13.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">innertainment</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="SteamVR" src="assets/images/projects/project_14.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">SteamVR</div>
-  </div>
-</div>
-<div class="tile reveal">
-  <div class="thumb"><img alt="HALLYM UNIV MEDICAL CENTER" src="assets/images/projects/project_15.jpg"/></div>
-  <div class="caption">
-    <div class="label"></div>
-    <div class="title">HALLYM UNIV. MEDICAL CENTER</div>
-  </div>
-</div>
-</div><div class="clients-kr"><h3>Selected Clients / Projects (KR)</h3><p>Korea‑focused portfolio — multiple project names undisclosed</p><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
+<a class="tile reveal" href="https://www.artstation.com/minoentertainment" target="_blank" style="transition-delay:.03s;z-index:1"><img alt="" src="assets/images/projects/project_02.jpg"/><div class="ov"><h3>LIONGAMES</h3><p>3D Modeling</p></div></a>
+<a class="tile reveal" href="https://www.artstation.com/minoentertainment" target="_blank" style="transition-delay:.06s;z-index:1"><img alt="" src="assets/images/projects/project_03.jpg"/><div class="ov"><h3>LG</h3><p>3D Assets</p></div></a>
+<a class="tile reveal" href="https://www.artstation.com/minoentertainment" target="_blank" style="transition-delay:.09s;z-index:1"><img alt="" src="assets/images/projects/project_04.jpg"/><div class="ov"><h3>KB Kookmin Bank</h3><p>3D Assets</p></div></a>
+<a class="tile reveal" href="https://www.artstation.com/minoentertainment" target="_blank" style="z-index:1"><img alt="" src="assets/images/projects/project_05.jpg"/><div class="ov"><h3>Larva</h3><p>3D Modeling</p></div></a>
+<a class="tile reveal" href="https://www.artstation.com/minoentertainment" target="_blank" style="transition-delay:.03s;z-index:1"><img alt="" src="assets/images/projects/project_06.jpg"/><div class="ov"><h3>Airpass</h3><p>3D Assets</p></div></a>
+<a class="tile reveal" href="https://www.artstation.com/minoentertainment" target="_blank" style="transition-delay:.06s;z-index:1"><img alt="" src="assets/images/projects/project_07.jpg"/><div class="ov"><h3>SG Golf</h3><p>3D Modeling</p></div></a>
+<a class="tile reveal" href="https://www.artstation.com/minoentertainment" target="_blank" style="transition-delay:.09s;z-index:1"><img alt="" src="assets/images/projects/project_08.jpg"/><div class="ov"><h3>MBC Show! Music Core</h3><p>3D/Set Assets</p></div></a>
+<a class="tile reveal" href="https://www.artstation.com/minoentertainment" target="_blank" style="transition-delay:.12s;z-index:1"><img alt="" src="assets/images/projects/project_09.jpg"/><div class="ov"><h3>KRAFTON — ELYON</h3><p>Environment Modeling</p></div></a>
+<a class="tile reveal" href="https://www.artstation.com/minoentertainment" target="_blank" style="transition-delay:.15s;z-index:1"><img alt="" src="assets/images/projects/project_10.jpg"/><div class="ov"><h3>Urban Railway Gas‑Compartment</h3><p>3D Modeling</p></div></a>
+<a class="tile reveal" href="https://www.artstation.com/minoentertainment" target="_blank" style="transition-delay:.18s;z-index:1">
+  <img alt="Little Prince Theme Park" src="assets/images/projects/project_11.jpg"/>
+  <div class="ov"><h3>Jejudo Island - Little Prince Theme Park</h3><p>3D Character Modeling</p></div>
+</a>
+<a class="tile reveal" href="https://www.artstation.com/minoentertainment" target="_blank" style="transition-delay:.21s;z-index:1">
+  <img alt="Gwacheon National Museum" src="assets/images/projects/project_12.jpg"/>
+  <div class="ov"><h3>Gwacheon National Science Museum</h3><p>3D AR Modeling</p></div>
+</a>
+<a class="tile reveal" href="https://www.artstation.com/minoentertainment" target="_blank" style="transition-delay:.24s;z-index:1">
+  <img alt="K-pop Idol VR FanMeeting" src="assets/images/projects/project_13.jpg"/>
+  <div class="ov"><h3>innertainment</h3><p>3D Modeling&Rigging</p></div>
+</a>
+<a class="tile reveal" href="https://www.artstation.com/minoentertainment" target="_blank" style="transition-delay:.27s;z-index:1">
+  <img alt="SteamVR" src="assets/images/projects/project_14.jpg"/>
+  <div class="ov"><h3>SteamVR</h3><p>VR Game Launching</p></div>
+</a>
+<a class="tile reveal" href="https://www.artstation.com/minoentertainment" target="_blank" style="transition-delay:.30s;z-index:1">
+  <img alt="HALLYM UNIV MEDICAL CENTER" src="assets/images/projects/project_15.jpg"/>
+  <div class="ov"><h3>HALLYM UNIV. MEDICAL CENTER</h3><p>3D Modeling</p></div>
+</a>
+<a aria-label="Open ArtStation portfolio" class="btn btn-artstation grid-cta" href="https://www.artstation.com/minoentertainment" rel="noopener" target="_blank">ArtStation</a></div><div class="clients-kr"><h3>Selected Clients / Projects (KR)</h3><p>Korea‑focused portfolio — multiple project names undisclosed</p><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
 <div style="background:#0b0b0b;border:1px solid #222;border-radius:10px;padding:12px">
 <b>KRAFTON — inZOI</b><br/><span style="color:var(--muted)">Environment Modeling (early stage ~ present)</span>
 </div>
