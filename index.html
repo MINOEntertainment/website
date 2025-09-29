@@ -330,6 +330,49 @@ nav .nav-artstation img {
   display: inline-block !important;
 }
 </style>
+<style>
+/* ===== FORCE: Right-align top nav items ===== */
+#header nav, header nav {
+  display: flex !important;
+  align-items: center !important;
+}
+#header nav > ul, header nav > ul, 
+#header nav .menu, header nav .menu {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  margin-left: auto !important;   /* push to the right */
+  justify-content: flex-end !important;
+}
+#header nav > ul > li, header nav > ul > li {
+  list-style: none !important;
+}
+
+
+/* ===== FORCE: Big Hero ArtStation button (class-based) ===== */
+#hero .btn-hero-artstation {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  background: #13aff0 !important;
+  color: #fff !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  padding: 18px 36px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  transition: background 0.2s ease, transform 0.2s ease !important;
+}
+#hero .btn-hero-artstation:hover {
+  background: #0e8dc4 !important;
+  transform: scale(1.05) !important;
+}
+#hero .btn-hero-artstation img {
+  height: 30px !important;
+  width: auto !important;
+  display: inline-block !important;
+}
+</style>
 </head>
 <body>
 <header class="header">
