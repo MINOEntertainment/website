@@ -366,6 +366,26 @@ section#portfolio .poster-card .name {
   line-height: 1.4;
 }
 </style>
+<style>
+/* === Additional Works: full-width, two-column layout === */
+#other-works .container {
+  display: grid !important;
+  grid-template-columns: 1fr 2fr;  /* left: title/desc, right: list */
+  gap: 32px;
+  align-items: start;
+}
+#other-works h2,
+#other-works p.lead { grid-column: 1; }
+#other-works .client-list { grid-column: 2; }
+
+/* On small screens stack vertically */
+@media (max-width: 900px) {
+  #other-works .container {
+    grid-template-columns: 1fr;
+  }
+  #other-works .client-list { grid-column: 1; }
+}
+</style>
 </head>
 <body>
 <header class="header">
