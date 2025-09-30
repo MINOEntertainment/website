@@ -352,6 +352,51 @@ section#portfolio .poster-card .name {
 #portfolio .artstation-btn a:hover { background:#0e8dc4; transform:scale(1.03); }
 #portfolio .artstation-btn img { height:24px; width:auto; display:inline-block; }
 </style>
+<style>
+/* === Other Works (Dark) === */
+.other-works-dark{
+  background:#0a0a0a;
+  position:relative;
+  overflow:hidden;
+}
+.other-works-dark:before{
+  content:"";
+  position:absolute; inset:0 0 auto 0; height:2px;
+  background:linear-gradient(90deg,#ffd54a,transparent);
+  opacity:.7;
+}
+#other-works .ow-head{ margin-bottom:24px; }
+#other-works h2{ color:#fff; font-size:32px; margin:0 0 8px; }
+#other-works .lead{ color:#9ca3af; margin:0; }
+
+/* responsive multi-column list with styled badges */
+#other-works .ow-list{
+  list-style:none; padding:0; margin:20px 0 0;
+  display:grid; grid-template-columns: repeat(3, minmax(240px,1fr));
+  gap:14px 24px;
+}
+#other-works .ow-list li{
+  display:flex; align-items:center; gap:10px;
+  padding:10px 12px; border:1px solid #1f1f1f; border-radius:8px;
+  background:#0f0f0f;
+}
+#other-works .ow-list .year{
+  background:#ffd54a; color:#0a0a0a; font-weight:800;
+  font-size:12px; line-height:1; padding:6px 8px; border-radius:6px; min-width:48px; text-align:center;
+}
+#other-works .ow-list .client{ color:#fff; font-weight:700; }
+#other-works .ow-list .role{ color:#c7c7c7; font-size:14px; }
+#other-works .ow-list .client:after{
+  content:"—"; color:#5a5a5a; margin:0 6px 0 8px; font-weight:400;
+}
+
+@media (max-width: 1100px){
+  #other-works .ow-list{ grid-template-columns: repeat(2, minmax(240px,1fr)); }
+}
+@media (max-width: 720px){
+  #other-works .ow-list{ grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
 <header class="header">
@@ -605,9 +650,40 @@ section#portfolio .poster-card .name {
   
 </section>
 <!-- OTHER WORKS -->
-<section id="other-works" class="section" style="background:var(--bg-3)">
+<section id="other-works" class="section other-works-dark">
   <div class="container">
-    <h2 class="reveal">그 외에 작업들</h2>
+    <div class="ow-head">
+      <h2 class="reveal">그 외에 작업들</h2>
+      <p class="lead reveal">주요 포트폴리오 외에도 다양한 협업 경험이 있습니다.</p>
+    </div>
+
+    <ul class="ow-list">
+      <li class="reveal">
+        <span class="year">2024</span>
+        <span class="client">Client E</span>
+        <span class="role">Promotional Cinematic Assets</span>
+      </li>
+      <li class="reveal">
+        <span class="year">2023</span>
+        <span class="client">Client D</span>
+        <span class="role">Environment Optimization for Console</span>
+      </li>
+      <li class="reveal">
+        <span class="year">2022</span>
+        <span class="client">Client C</span>
+        <span class="role">Character Modeling &amp; Animation</span>
+      </li>
+      <li class="reveal">
+        <span class="year">2021</span>
+        <span class="client">Client B</span>
+        <span class="role">VR Simulation Environment</span>
+      </li>
+      <li class="reveal">
+        <span class="year">2020</span>
+        <span class="client">Client A</span>
+        <span class="role">Mobile Game UI &amp; 3D Assets</span>
+      </li>
+    </ul>
   </div>
 </section>
 
