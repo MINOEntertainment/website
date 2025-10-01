@@ -851,7 +851,7 @@ This section offers a broader view of our work history and achievements.</p>
 <footer class="footer">
 <div class="inner">
 <div>© <span id="year"></span> Mino Entertainment. All rights reserved.</div>
-<div>Seoul, Republic of Korea • e-mail : <a id="footer-email" href="mailto:mino@minoenter.com">mino@minoenter.com</a></div>
+<div>Seoul, Republic of Korea • e-mail : <a id="footer-email" href="mailto:mino@minoenter.com" onclick="try{window.location.href=this.href;}catch(e){} return false;">mino@minoenter.com</a></div>
 </div>
 
 <!-- Partners / Clients strip (inserted) -->
@@ -973,18 +973,22 @@ ${f.message.value}`);
 
 
 <script>
-// --- Footer e-mail link: robust click-to-compose (no impact elsewhere) ---
+// Footer email: robust compose + Gmail fallback (no UI changes)
 (function () {
   var link = document.getElementById('footer-email') || document.querySelector('footer a[href^="mailto:"]');
   if (!link) return;
   link.addEventListener('click', function (e) {
-    // Prevent any accidental interference and explicitly trigger compose
     e.preventDefault();
-    var href = this.getAttribute('href');
-    // Try opening with window.open first (some browsers prefer this on user gesture)
-    try { window.open(href, '_self'); } catch (_e) {}
-    // Fallback: set location
-    try { window.location.href = href; } catch (_e) {}
+    var href = link.getAttribute('href');
+    var opened = false;
+    try { window.location.href = href; opened = true; } catch(_e){}
+    // Fallback to Gmail compose if nothing seems to happen within 700ms
+    setTimeout(function(){
+      if (document.visibilityState === 'visible') {
+        var g = 'https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=mino@minoenter.com';
+        try { window.open(g, '_blank', 'noopener'); } catch(_e){}
+      }
+    }, 700);
   }, { capture: true, passive: false });
 })();
 </script>
