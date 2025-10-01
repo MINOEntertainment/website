@@ -973,20 +973,20 @@ ${f.message.value}`);
 
 
 <script>
-// Footer email: robust compose + Gmail fallback (no UI changes)
+// Footer email: no-popup version (Gmail fallback uses same tab to avoid blockers)
 (function () {
   var link = document.getElementById('footer-email') || document.querySelector('footer a[href^="mailto:"]');
   if (!link) return;
   link.addEventListener('click', function (e) {
     e.preventDefault();
-    var href = link.getAttribute('href');
-    var opened = false;
-    try { window.location.href = href; opened = true; } catch(_e){}
-    // Fallback to Gmail compose if nothing seems to happen within 700ms
+    var mailtoHref = link.getAttribute('href');
+    try { window.location.href = mailtoHref; } catch (_e) {}
+    // If the page stays visible, assume mailto failed or is blocked → go to Gmail in the SAME tab.
     setTimeout(function(){
       if (document.visibilityState === 'visible') {
         var g = 'https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=mino@minoenter.com';
-        try { window.open(g, '_blank', 'noopener'); } catch(_e){}
+        // same-tab navigation (no popup), avoids blocker
+        window.location.assign(g);
       }
     }, 700);
   }, { capture: true, passive: false });
