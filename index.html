@@ -22,7 +22,7 @@
 <style>
 :root{
   --bg:#121212; --bg-2:#0b0b0b; --bg-3:#1a1a1a; --fg:#ffffff; --muted:#c9c9c9;
-  --accent:#0abeff; --card:#161616; --radius:16px; --maxw:1440px;
+  --accent:#0abeff; --card:#161616; --radius:16px; --maxw:1200px;
 }
 *{box-sizing:border-box} html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
@@ -276,185 +276,11 @@ section.partner-rail {
 
 </style>
 
-<style>
-/* ===== FORCE Poster layout overrides (high specificity) ===== */
-section#portfolio .grid.poster-4 { 
-  display: grid !important; 
-  grid-template-columns: repeat(4, 1fr) !important; 
-  gap: 32px !important;
-}
-section#portfolio .tile,
-section#portfolio .tile img,
-section#portfolio .poster-card,
-section#portfolio .poster-card .poster { 
-  border-radius: 0 !important; 
-}
-section#portfolio .poster-card .meta { 
-  color: #ffd54a !important; 
-  font-weight: 800 !important; 
-  font-size: 15px !important;
-}
-section#portfolio .poster-card .name { 
-  color: #ffffff !important; 
-  font-weight: 800 !important; 
-  font-size: 15px !important; 
-  line-height: 1.25 !important;
-}
-</style>
-<style>
-/* === Custom Fixes === */
-
-/* Replace left logo dot with company logo */
-.logo-dot { display:none !important; }
-.logo img.company-logo {
-  height:28px; width:auto; display:inline-block;
-}
-
-/* Remove nav separators (dots) */
-.nav ul li::before, .menu a::before { content:none !important; }
-.menu { gap:18px !important; }
-
-/* Hero ArtStation big button */
-.hero .btn-hero-artstation {
-  display:inline-flex !important;
-  align-items:center !important;
-  gap:12px !important;
-  background:#13aff0 !important;
-  color:#fff !important;
-  font-size:22px !important;
-  font-weight:800 !important;
-  padding:18px 36px !important;
-  border-radius:8px !important;
-  text-decoration:none !important;
-  transition:background .2s ease, transform .2s ease !important;
-}
-.hero .btn-hero-artstation:hover { background:#0e8dc4 !important; transform:scale(1.05) !important; }
-.hero .btn-hero-artstation img { height:30px !important; width:auto !important; display:inline-block !important; }
-</style>
-<style>
-/* === ArtStation Buttons (Nav + Portfolio) === */
-.nav-artstation a {
-  display:inline-flex; align-items:center; gap:6px;
-  background:#13aff0; color:#fff; font-weight:800;
-  padding:10px 16px; border-radius:8px; text-decoration:none;
-  transition:background .2s ease;
-}
-.nav-artstation a:hover { background:#0e8dc4; }
-.nav-artstation img { height:18px; width:auto; display:inline-block; }
-
-#portfolio .artstation-btn { margin: 20px 0 30px; text-align:center; }
-#portfolio .artstation-btn a {
-  display:inline-flex; align-items:center; gap:10px;
-  background:#13aff0; color:#fff; font-size:18px; font-weight:800;
-  padding:14px 28px; border-radius:10px; text-decoration:none;
-  transition:background .2s ease, transform .2s ease;
-}
-#portfolio .artstation-btn a:hover { background:#0e8dc4; transform:scale(1.03); }
-#portfolio .artstation-btn img { height:24px; width:auto; display:inline-block; }
-</style>
-<style>
-/* === Other Works (Dark) === */
-.other-works-dark{
-  background:#0a0a0a;
-  position:relative;
-  overflow:hidden;
-}
-
-#other-works .ow-head{ margin-bottom:24px; }
-#other-works h2{ color:#fff; font-size:32px; margin:0 0 8px; }
-#other-works .lead{ color:#9ca3af; margin:0; }
-
-/* responsive multi-column list with styled badges */
-#other-works .ow-list{
-  list-style:none; padding:0; margin:20px 0 0;
-  display:grid; grid-template-columns: repeat(3, minmax(240px,1fr));
-  gap:14px 24px;
-}
-#other-works .ow-list li{
-  display:flex; align-items:center; gap:10px;
-  padding:10px 12px; border:1px solid #1f1f1f; border-radius:8px;
-  background:#0f0f0f;
-}
-#other-works .ow-list .year{
-  background:#ffd54a; color:#0a0a0a; font-weight:800;
-  font-size:12px; line-height:1; padding:6px 8px; border-radius:6px; min-width:48px; text-align:center;
-}
-#other-works .ow-list .client{ color:#fff; font-weight:700; }
-#other-works .ow-list .role{ color:#c7c7c7; font-size:14px; }
-#other-works .ow-list .client:after{
-  content:"—"; color:#5a5a5a; margin:0 6px 0 8px; font-weight:400;
-}
-
-@media (max-width: 1100px){
-  #other-works .ow-list{ grid-template-columns: repeat(2, minmax(240px,1fr)); }
-}
-@media (max-width: 720px){
-  #other-works .ow-list{ grid-template-columns: 1fr; }
-}
-</style>
-<style>
-/* === Adjust spacing for Other Works section === */
-#other-works.section {
-  padding-top: 40px;
-  padding-bottom: 60px;
-}
-</style>
-<style>
-/* === Tighten spacing between Portfolio and Other Works === */
-#portfolio.section { padding-bottom: 20px !important; }
-#other-works.section { padding-top: 20px !important; }
-#other-works h2 { margin-top: 0 !important; }
-#other-works .lead { margin-top: 0 !important; }
-</style>
-<style>
-/* === Force 2-column layout for Other Works list === */
-#other-works .ow-list {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(320px, 1fr)) !important;
-  gap: 16px 32px !important;
-}
-</style>
-<style>
-/* === Responsive layout for Other Works list === */
-#other-works .ow-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(320px, 1fr));
-  gap: 16px 32px;
-}
-
-@media (max-width: 900px) {
-  #other-works .ow-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  #other-works .ow-list {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
-<style>
-/* ==== Nav ArtStation icon vertical alignment fix (header only) ==== */
-.menu .nav-artstation{
-  display:inline-flex !important;
-  align-items:center !important;
-  gap:6px !important;
-  line-height:1 !important;
-  padding:0 !important;
-}
-.menu .nav-artstation img{
-  height:18px !important;
-  width:auto !important;
-  display:block !important;   /* remove baseline */
-  transform: translateY(1px); /* nudge down slightly */
-}
-</style>
 </head>
 <body>
 <header class="header">
 <nav class="nav">
-<div class="logo"><img src="assets/images/logos/company_logo.png" alt="Mino Entertainment Logo" class="company-logo"> Mino Entertainment</div>
+<div class="logo"><span class="logo-dot"></span> Mino Entertainment</div>
 <div aria-controls="menu" aria-expanded="false" aria-label="Open menu" class="burger" id="burger">
 <span></span><span></span><span></span>
 </div>
@@ -463,9 +289,6 @@ section#portfolio .poster-card .name {
 <a href="#services">Services</a>
 <a href="#portfolio">Portfolio</a>
 <a href="#contact" class="contact">Contact</a>
-<a class="nav-artstation" href="https://www.artstation.com/minoentertainment" target="_blank">
-  <img src="assets/images/logos/artstation.png" alt="ArtStation logo"/> ArtStation
-</a>
 </div>
 </nav>
 </header>
@@ -477,7 +300,7 @@ section#portfolio .poster-card .name {
 <h1 class="reveal" style="transition-delay:.05s">Game‑Ready 3D Modeling Studio</h1>
 <p class="reveal" style="transition-delay:.1s">We deliver engine-optimized assets—PC · Console · Mobile ready—featuring efficient polygon count, draw call reduction, LOD, high-resolution PBR textures, and clean topology—ready for immediate use in your game.</p>
 <div class="actions reveal" style="transition-delay:.15s">
-<a class="btn-hero-artstation" href="https://www.artstation.com/minoentertainment" target="_blank"><img src="assets/images/logos/artstation.png" alt="ArtStation logo"/> View on ArtStation</a>
+<a class="btn" href="https://www.artstation.com/minoentertainment" rel="noopener" target="_blank">ArtStation</a>
 </div>
 <div class="reveal" style="transition-delay:.2s">
 <span style="display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid #2a2a2a;border-radius:999px;background:#0f0f0f;">
@@ -509,7 +332,8 @@ section#portfolio .poster-card .name {
       <li><img src="assets/images/logos/logo_17.png" alt="Logo 17"></li>
       <li><img src="assets/images/logos/logo_18.png" alt="Logo 18"></li>
       <li><img src="assets/images/logos/logo_19.png" alt="Logo 19"></li>
-      <li><img src="assets/images/logos/logo_20.png" alt="Logo 20"></li></ul>
+      <li><img src="assets/images/logos/logo_20.png" alt="Logo 20"></li>
+    </ul>
     <ul class="partner-rail__track" aria-hidden="true">
       <li><img src="assets/images/logos/logo_01.png" alt=""></li>
       <li><img src="assets/images/logos/logo_02.png" alt=""></li>
@@ -596,242 +420,136 @@ section#portfolio .poster-card .name {
 <div class="container">
 <h2 class="reveal">Latest Projects</h2>
 <p class="lead reveal" style="transition-delay:.05s">Flagship reference: KRAFTON — inZOI environment modeling partner (early development to present).</p>
-  <div class="artstation-btn">
-    <a href="https://www.artstation.com/minoentertainment" target="_blank">
-      <img src="assets/images/logos/artstation.png" alt="ArtStation logo"/> View More on ArtStation
-    </a>
+<div class="grid">
+<!-- inZOI 대표 카드 -->
+<div class="tile reveal">
+  <div class="thumb"><img alt="KRAFTON inZOI" src="assets/images/projects/project_01.jpg"/></div>
+  <div class="caption">
+    <div class="label"></div>
+    <div class="title">KRAFTON — inZOI</div>
   </div>
-
-<div class="grid poster-4">
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_01.jpg" alt="KRAFTON — inZOI poster"/>
-  <div class="meta">2022~present · KRAFTON</div>
-  <div class="name">inZOI — 3D Environment</div>
 </div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_02.jpg" alt="LIONGAMES poster"/>
-  <div class="meta">2022~2023 · LIONGAMES</div>
-  <div class="name">Soulworker — Costumes, Rigging, Animations</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_03.jpg" alt="LG poster"/>
-  <div class="meta">2022 · LG CNS</div>
-  <div class="name">Metaverse — 3D Environment</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_04.jpg" alt="KB Kookmin Bank poster"/>
-  <div class="meta">2022 · SALIN</div>
-  <div class="name">KB Kookmin Bank — 3D Characters</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_05.jpg" alt="Larva poster"/>
-  <div class="meta">2022 · MENINBLOX</div>
-  <div class="name">Larva NFT — 3D Environment, Animations</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_06.jpg" alt="Airpass poster"/>
-  <div class="meta">2024 · Airpass</div>
-  <div class="name">Golf Simulator — 3D Environment</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_07.jpg" alt="SG Golf poster"/>
-  <div class="meta">2022~2025 · SG Golf</div>
-  <div class="name">Golf Simulator — Terrain & Level art</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_08.jpg" alt="MBC Show! Music Core poster"/>
-  <div class="meta">2024 · Airpass</div>
-  <div class="name">Metaverse — 3D Characters</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_09.jpg" alt="KRAFTON — ELYON poster"/>
-  <div class="meta">2021 · KRAFTON</div>
-  <div class="name">ELYON — 3D Environment</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_10.jpg" alt="Urban Railway Gas-Compartment poster"/>
-  <div class="meta">2021 · Hanyoung Culture&Technology</div>
-  <div class="name">Urban Railway Gas-Compartment — 3D Environment</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_11.jpg" alt="Jejudo Island - Little Prince Theme Park poster"/>
-  <div class="meta">2022 · HappySketch</div>
-  <div class="name">Jejudo Island - Little Prince Theme Park — 3D Characters</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_12.jpg" alt="Gwacheon National Science Museum poster"/>
-  <div class="meta">2022 · SALIN</div>
-  <div class="name">Gwacheon National Science Museum — 3D Environment</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_13.jpg" alt="innertainment poster"/>
-  <div class="meta">2019 · innertainment</div>
-  <div class="name">3D Environment, 3D Characters, Rigging, Animations</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_14.jpg" alt="SteamVR poster"/>
-  <div class="meta">2020 · SteamVR</div>
-  <div class="name">VR Game Launching</div>
-</div>
-
-<div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_15.jpg" alt="HALLYM UNIV. MEDICAL CENTER poster"/>
-  <div class="meta">2024 · MENINBLOX</div>
-  <div class="name">HALLYM Univ. Medical Center — 3D Environment, 3D Characters</div>
-</div>
-
-  <div class="tile poster-card reveal">
-  <img class="poster" src="assets/images/projects/project_16.jpg" alt="MBC Show! Music Core poster"/>
-  <div class="meta">2019 · MBC Show! Music Core</div>
-  <div class="name">Metaverse — 3D Environment</div>
-</div>
-  
-</section>
-<!-- OTHER WORKS -->
-<section id="other-works" class="section other-works-dark">
-  <div class="container">
-    <div class="ow-head">
-      <h2 class="reveal">Work History & Collaborations</h2>
-      <p class="lead reveal">We have collaborated on numerous projects across PC, Mobile, Console, and VR.
-This section offers a broader view of our work history and achievements.</p>
-    </div>
-
-    <ul class="ow-list">
-      <li class="reveal">
-        <span class="year">2023</span>
-        <span class="client">MENINBLOX</span>
-        <span class="role">Sogang University Metaverse - 3D Environment</span>
-      </li>
-         <li class="reveal">
-        <span class="year">2023</span>
-        <span class="client">SALIN</span>
-        <span class="role">Samsung Life Insurance - Rigging, Animations</span>
-      </li>
-         <li class="reveal">
-        <span class="year">2023</span>
-        <span class="client">SALIN</span>
-        <span class="role">Korea Post - Metaverse 3D Environment</span>
-      </li>
-      <li class="reveal">
-        <span class="year">2023</span>
-        <span class="client">SALIN</span>
-        <span class="role">LG Gram - Metaverse 3D Environment level designs in UE5</span>
-      </li>
-            <li class="reveal">
-        <span class="year">2022</span>
-        <span class="client">SALIN</span>
-        <span class="role">Soongsil University - Metaverse 3D Character, Rigging, Animations</span>
-      </li>
-            <li class="reveal">
-        <span class="year">2022</span>
-        <span class="client">Code Reach</span>
-        <span class="role">3D Fitness Content - 3D Character, Rigging</span>
-      </li>
-            <li class="reveal">
-        <span class="year">2022</span>
-        <span class="client">Exbody</span>
-        <span class="role">3D Fitness Content - 3D Animation</span>
-      </li>
-            <li class="reveal">
-        <span class="year">2022</span>
-        <span class="client">AICT (Government Organization)</span>
-        <span class="role">First Place Award - Convergence Technology</span>
-      </li>
-      <li class="reveal">
-        <span class="year">2021</span>
-        <span class="client">AICT (Government Organization)</span>
-        <span class="role">First Place Award - Convergence Technology</span>
-      </li>
-      <li class="reveal">
-        <span class="year">2021</span>
-        <span class="client">FANATICAL - Focus Multimedia</span>
-        <span class="role">Publishing Contract - VR Game</span>
-      </li>
-      <li class="reveal">
-        <span class="year">2020</span>
-        <span class="client">QODE Interactive</span>
-        <span class="role">3D Modeling & UI Outsourcing Contract</span>
-      </li>
-            <li class="reveal">
-        <span class="year">2020</span>
-        <span class="client">Namdong-gu Office, Incheon</span>
-        <span class="role">VR Experience Zone - Consultation and rental services</span>
-      </li>
-            <li class="reveal">
-        <span class="year">2020</span>
-        <span class="client">K-Startup</span>
-        <span class="role">Awarded First Place</span>
-      </li>
-            <li class="reveal">
-        <span class="year">2019</span>
-        <span class="client">SALIN</span>
-        <span class="role">Maxim (AR) - 3D Environment</span>
-      </li>
-            <li class="reveal">
-        <span class="year">2019</span>
-        <span class="client">Incheon Creative Innovation Center</span>
-        <span class="role">Excellence Award - Innovation Challenge</span>
-      </li>
-            <li class="reveal">
-        <span class="year">2019</span>
-        <span class="client">SALIN</span>
-        <span class="role">Metaverse - 3D Character, Rigging</span>
-      </li>
-            <li class="reveal">
-        <span class="year">2019</span>
-        <span class="client">FROMtheRED</span>
-        <span class="role">Vrun - 3D Environment, 3D Characters, Rigging, Animations</span>
-      </li>
-            <li class="reveal">
-        <span class="year">2019</span>
-        <span class="client">Innertainment</span>
-        <span class="role">K-pop Idol VR Fan Meeting - Concept art, 3D Environment, 3D Characters, Rigging, Animations</span>
-      </li>
-            <li class="reveal">
-        <span class="year">2019</span>
-        <span class="client">KT</span>
-        <span class="role">kt Super VR – launched SummonerVR on the kt Super VR platform.</span>
-      </li>
-            <li class="reveal">
-        <span class="year">2018</span>
-        <span class="client">Barunson</span>
-        <span class="role">SummonerVR Publishing Contract</span>
-      </li>
-            <li class="reveal">
-        <span class="year">2018</span>
-        <span class="client">KT & Barunson</span>
-        <span class="role">Link-on Award - Awarded 3rd place in the VR Game Part</span>
-      </li>
-            <li class="reveal">
-        <span class="year">2016</span>
-        <span class="client">Anyang Creative Industry Promotion Agency</span>
-        <span class="role">Business Race - Awarded 3rd place</span>
-      </li>
-                  <li class="reveal">
-        <span class="year">2016</span>
-        <span class="client">Nexon Computer Museum</span>
-        <span class="role">VR OPEN CALL - Awarded 2nd place</span>
-      </li>
-      
-    </ul>
+<!-- 기타 카드 -->
+<div class="tile reveal">
+  <div class="thumb"><img alt="" src="assets/images/projects/project_02.jpg"/></div>
+  <div class="caption">
+    <div class="label"></div>
+    <div class="title">LIONGAMES</div>
   </div>
-</section>
+</div>
+<div class="tile reveal">
+  <div class="thumb"><img alt="" src="assets/images/projects/project_03.jpg"/></div>
+  <div class="caption">
+    <div class="label"></div>
+    <div class="title">LG</div>
+  </div>
+</div>
+<div class="tile reveal">
+  <div class="thumb"><img alt="" src="assets/images/projects/project_04.jpg"/></div>
+  <div class="caption">
+    <div class="label"></div>
+    <div class="title">KB Kookmin Bank</div>
+  </div>
+</div>
+<div class="tile reveal">
+  <div class="thumb"><img alt="" src="assets/images/projects/project_05.jpg"/></div>
+  <div class="caption">
+    <div class="label"></div>
+    <div class="title">Larva</div>
+  </div>
+</div>
+<div class="tile reveal">
+  <div class="thumb"><img alt="" src="assets/images/projects/project_06.jpg"/></div>
+  <div class="caption">
+    <div class="label"></div>
+    <div class="title">Airpass</div>
+  </div>
+</div>
+<div class="tile reveal">
+  <div class="thumb"><img alt="" src="assets/images/projects/project_07.jpg"/></div>
+  <div class="caption">
+    <div class="label"></div>
+    <div class="title">SG Golf</div>
+  </div>
+</div>
+<div class="tile reveal">
+  <div class="thumb"><img alt="" src="assets/images/projects/project_08.jpg"/></div>
+  <div class="caption">
+    <div class="label"></div>
+    <div class="title">MBC Show! Music Core</div>
+  </div>
+</div>
+<div class="tile reveal">
+  <div class="thumb"><img alt="" src="assets/images/projects/project_09.jpg"/></div>
+  <div class="caption">
+    <div class="label"></div>
+    <div class="title">KRAFTON — ELYON</div>
+  </div>
+</div>
+<div class="tile reveal">
+  <div class="thumb"><img alt="" src="assets/images/projects/project_10.jpg"/></div>
+  <div class="caption">
+    <div class="label"></div>
+    <div class="title">Urban Railway Gas‑Compartment</div>
+  </div>
+</div>
+<div class="tile reveal">
+  <div class="thumb"><img alt="Little Prince Theme Park" src="assets/images/projects/project_11.jpg"/></div>
+  <div class="caption">
+    <div class="label"></div>
+    <div class="title">Jejudo Island - Little Prince Theme Park</div>
+  </div>
+</div>
+<div class="tile reveal">
+  <div class="thumb"><img alt="Gwacheon National Museum" src="assets/images/projects/project_12.jpg"/></div>
+  <div class="caption">
+    <div class="label"></div>
+    <div class="title">Gwacheon National Science Museum</div>
+  </div>
+</div>
+<div class="tile reveal">
+  <div class="thumb"><img alt="K-pop Idol VR FanMeeting" src="assets/images/projects/project_13.jpg"/></div>
+  <div class="caption">
+    <div class="label"></div>
+    <div class="title">innertainment</div>
+  </div>
+</div>
+<div class="tile reveal">
+  <div class="thumb"><img alt="SteamVR" src="assets/images/projects/project_14.jpg"/></div>
+  <div class="caption">
+    <div class="label"></div>
+    <div class="title">SteamVR</div>
+  </div>
+</div>
+<div class="tile reveal">
+  <div class="thumb"><img alt="HALLYM UNIV MEDICAL CENTER" src="assets/images/projects/project_15.jpg"/></div>
+  <div class="caption">
+    <div class="label"></div>
+    <div class="title">HALLYM UNIV. MEDICAL CENTER</div>
+  </div>
+</div>
+</div><div class="clients-kr"><h3>Selected Clients / Projects (KR)</h3><p>Korea‑focused portfolio — multiple project names undisclosed</p><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
+<div style="background:#0b0b0b;border:1px solid #222;border-radius:10px;padding:12px">
+<b>KRAFTON — inZOI</b><br/><span style="color:var(--muted)">Environment Modeling (early stage ~ present)</span>
+</div>
+<div style="background:#0b0b0b;border:1px solid #222;border-radius:10px;padding:12px">
+<b>LIONGAMES</b><br/><span style="color:var(--muted)">Costume, Item Modeling, Rigging, 3D Animation</span>
+</div>
+<div style="background:#0b0b0b;border:1px solid #222;border-radius:10px;padding:12px">
+<b>LG</b><br/><span style="color:var(--muted)">Virtual Meeting Space</span>
+</div>
+<div style="background:#0b0b0b;border:1px solid #222;border-radius:10px;padding:12px">
+<b>SG Golf</b><br/><span style="color:var(--muted)">Golf world map Terrin & Level Design</span>
+</div>
+<div style="background:#0b0b0b;border:1px solid #222;border-radius:10px;padding:12px">
+<b>Larva</b><br/><span style="color:var(--muted)">3D Scene Composition</span>
+</div>
+<div style="background:#0b0b0b;border:1px solid #222;border-radius:10px;padding:12px">
+<b>Others</b><br/><span style="color:var(--muted)">Airpass, exbody, SG Golf, MBC Show! Music Core, Samsunglife, Jejudo Island - Little Prince Theme Park, LG Gram, Post Office, Urban Rail, Incheon-si, Gwacheon National Science Museum, SALIN, CODE REACH, FROMtheREDinnertainment, Seodaemun Prison History Hall 등</span>
+</div>
+</div></div>
 
-
+</div></section>
 <!-- CONTACT -->
 <section aria-label="Contact" class="section" id="contact" style="background:var(--bg-3)">
 <div class="container">
@@ -851,13 +569,28 @@ This section offers a broader view of our work history and achievements.</p>
 <footer class="footer">
 <div class="inner">
 <div>© <span id="year"></span> Mino Entertainment. All rights reserved.</div>
-<div>Seoul, Republic of Korea • e-mail : <a href="mailto:mino@minoenter.com">mino@minoenter.com</a></div>
+<div>Seoul, Republic of Korea • <a href="mailto:mino@minoenter.com" target="_blank" rel="noopener" class="footer-email">\2</a></div>
 </div>
 
 <!-- Partners / Clients strip (inserted) -->
 
 
 </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var el = document.querySelector('a.footer-email');
+  if(el){
+    el.addEventListener('click', function(e){
+      // Let browser handle mailto naturally; ensure href is correct
+      if(!this.href || this.href.indexOf('mailto:')!==0){
+        this.href = 'mailto:mino@minoenter.com';
+      }
+    }, {passive:true});
+  }
+});
+</script>
+
 <script>
 // Mobile menu
 const burger = document.getElementById('burger');
