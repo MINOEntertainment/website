@@ -569,28 +569,13 @@ section.partner-rail {
 <footer class="footer">
 <div class="inner">
 <div>© <span id="year"></span> Mino Entertainment. All rights reserved.</div>
-<div>Seoul, Republic of Korea • <a href="mailto:mino@minoenter.com" target="_blank" rel="noopener" class="footer-email">\2</a></div>
+<div>Seoul, Republic of Korea • <a href="mailto:mino@minoenter.com">mino@minoenter.com</a></div>
 </div>
 
 <!-- Partners / Clients strip (inserted) -->
 
 
 </footer>
-
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  var el = document.querySelector('a.footer-email');
-  if(el){
-    el.addEventListener('click', function(e){
-      // Let browser handle mailto naturally; ensure href is correct
-      if(!this.href || this.href.indexOf('mailto:')!==0){
-        this.href = 'mailto:mino@minoenter.com';
-      }
-    }, {passive:true});
-  }
-});
-</script>
-
 <script>
 // Mobile menu
 const burger = document.getElementById('burger');
