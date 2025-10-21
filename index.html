@@ -491,6 +491,39 @@ section#portfolio .poster-card .name {
 }
 /* === /Mobile One-Column Override === */
 </style>
+
+<style id="mobile-one-column-portfolio-20251021-b">
+/* === Hard override: Portfolio 1-column on mobile (<=900px) === */
+@media (max-width: 900px){
+  /* Match the earlier high-specificity selector to win by source order */
+  section#portfolio .grid.poster-4{
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  /* Also cover generic .grid just in case */
+  section#portfolio .grid{
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  section#portfolio .poster-card{
+    display:block !important;
+  }
+  section#portfolio .poster-card .poster{
+    width:100% !important;
+    height:auto !important;
+    aspect-ratio: 4/3 !important;
+    object-fit: cover !important;
+  }
+  section#portfolio .poster-card .meta{
+    font-size:clamp(13px, 3.2vw, 15px) !important;
+  }
+  section#portfolio .poster-card .name{
+    font-size:clamp(15px, 4vw, 18px) !important;
+    line-height:1.28 !important;
+  }
+}
+/* === /Hard override === */
+</style>
 </head>
 <body>
 <header class="header">
