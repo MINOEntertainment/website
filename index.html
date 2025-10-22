@@ -1183,5 +1183,37 @@ ${f.message.value}`);
   } else { apply(); }
 })();
 </script>
+
+<script id="mobile-menu-dismiss-outside-20251022">
+(function(){
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('menu');
+  if(!burger || !menu) return;
+
+  function closeMenu(){
+    if(menu.classList.contains('show')){
+      menu.classList.remove('show');
+      burger.setAttribute('aria-expanded','false');
+    }
+  }
+
+  function onOutside(e){
+    if(!menu.classList.contains('show')) return;
+    if(menu.contains(e.target) || burger.contains(e.target)) return;
+    closeMenu();
+  }
+  document.addEventListener('click', onOutside, true);
+  document.addEventListener('touchstart', onOutside, {passive:true, capture:true});
+
+  menu.addEventListener('click', function(e){
+    var a = e.target.closest('a');
+    if(a){ closeMenu(); }
+  }, true);
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeMenu(); }
+  }, true);
+})();
+</script>
 </body>
 </html>
