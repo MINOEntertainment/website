@@ -525,52 +525,43 @@ section#portfolio .poster-card .name {
 /* === /Hard override === */
 </style>
 
-<style id="hero-krafton-mobile-emphasized-20251022">
+<style id="hero-krafton-mobile-stable-20251022">
 @media (max-width: 900px){
-  .hero .badge-wrap {
-    display: flex !important;
-    align-items: flex-start !important;
-    gap: 10px !important;
-    padding: 12px 16px !important;
-    border-radius: 20px !important;
-    background: rgba(0,0,0,.78) !important;
-    border: 1px solid rgba(255,255,255,.12) !important;
-    box-shadow: 0 8px 24px rgba(0,0,0,.35) !important;
-    max-width: 100% !important;
+  .hero .badge-wrap{
+    display:flex !important;
+    align-items:flex-start !important;
+    gap:10px !important;
+    padding:12px 16px !important;
+    border-radius:20px !important;
+    background:rgba(0,0,0,.78) !important;
+    border:1px solid rgba(255,255,255,.12) !important;
+    box-shadow:0 8px 24px rgba(0,0,0,.35) !important;
+    max-width:100% !important;
   }
-  .hero .badge-dot {
-    width: 12px !important;
-    height: 12px !important;
-    border-radius: 50% !important;
-    background: var(--accent) !important;
-    flex: 0 0 auto !important;
-    margin-top: 8px !important;
+  .hero .badge-dot{
+    width:12px !important;
+    height:12px !important;
+    border-radius:50% !important;
+    background:var(--accent) !important;
+    flex:0 0 auto !important;
+    margin-top:8px !important;
   }
-  .hero .krafton-lines {
-    display: flex !important;
-    flex-direction: column !important;
-    white-space: normal !important;
-    line-height: 1.35 !important;
+  .hero .krafton-lines{
+    display:flex !important;
+    flex-direction:column !important;
+    white-space:normal !important;
+    line-height:1.35 !important;
   }
-  .hero .krafton-lines b {
-    display: inline-block !important;
-    font-weight: 900 !important;
-    font-size: clamp(22px, 6vw, 25px) !important; /* enlarged for emphasis */
-    letter-spacing: .3px !important;
-    margin: 0 !important;
+  .hero .krafton-lines .line1{
+    font-weight:900 !important;
+    font-size:clamp(22px, 6vw, 26px) !important;
+    letter-spacing:.3px !important;
   }
-  .hero .krafton-lines .line2 {
-    display: inline-block !important;
-    font-size: clamp(15px, 4.2vw, 18px) !important;
-    color: #e5e7eb !important;
-    margin-top: 2px !important;
-  }
-  .hero .krafton-lines .line3 {
-    display: inline-block !important;
-    font-size: clamp(15px, 4.2vw, 18px) !important;
-    color: #e5e7eb !important;
-    opacity: 0.95 !important;
-    margin-top: 2px !important;
+  .hero .krafton-lines .line2,
+  .hero .krafton-lines .line3{
+    font-size:clamp(15px, 4.2vw, 18px) !important;
+    color:#e5e7eb !important;
+    margin-top:2px !important;
   }
 }
 </style>
@@ -1116,5 +1107,81 @@ ${f.message.value}`);
 })();
 </script>
 
+
+<script id="hero-krafton-mobile-stable-20251022">
+(function(){
+  function apply(){ try{
+    // Find the hero badge span that contains a <b> tag with 'KRAFTON' text.
+    var candidates = document.querySelectorAll('.hero .inner .reveal span');
+    var badge = null;
+    for (var i=0;i<candidates.length;i++){
+      var b = candidates[i].querySelector('b');
+      if (b && /KRAFTON/i.test(b.textContent||'')) { badge = candidates[i]; break; }
+    }
+    if(!badge) return;
+    if(badge.classList.contains('badge-wrap')) return; // already processed
+
+    // First child is the blue dot
+    var dot = badge.firstElementChild;
+    if(!dot){ return; }
+    dot.classList.add('badge-dot');
+
+    // Extract texts: <b> (line1), then tail text after <b>
+    var bEl = badge.querySelector('b');
+    if(!bEl) return;
+    var afterNodes = [];
+    var seenB = false;
+    var all = Array.prototype.slice.call(badge.childNodes);
+    for (var j=0;j<all.length;j++){
+      var n = all[j];
+      if (seenB) afterNodes.push(n);
+      if (n === bEl) seenB = true;
+    }
+    var tail = afterNodes.map(function(n){ return n.textContent || ''; }).join('').trim();
+    // Split tail into line2 and line3 (parentheses)
+    var line2 = tail;
+    var line3 = '';
+    var idx = tail.indexOf('(');
+    if (idx > -1){
+      line2 = tail.slice(0, idx).trim();
+      line3 = tail.slice(idx).trim();
+    }
+
+    // Cleanup tail nodes from badge
+    afterNodes.forEach(function(n){ if(n.parentNode===badge) badge.removeChild(n); });
+
+    // Build line container
+    var lines = document.createElement('span');
+    lines.className = 'krafton-lines';
+    var l1 = document.createElement('span');
+    l1.className = 'line1';
+    l1.textContent = (bEl.textContent || '').trim();
+    var l2 = document.createElement('span');
+    l2.className = 'line2';
+    l2.textContent = line2 || '— Environment Modeling Partner';
+    var l3 = document.createElement('span');
+    l3.className = 'line3';
+    l3.textContent = line3 || '';
+
+    // Remove original <b> from badge and insert new structure
+    if (bEl.parentNode === badge) badge.removeChild(bEl);
+    lines.appendChild(l1);
+    lines.appendChild(l2);
+    if (l3.textContent) lines.appendChild(l3);
+
+    // Mark wrapper & insert
+    badge.classList.add('badge-wrap');
+    if (dot && dot.nextSibling){
+      badge.insertBefore(lines, dot.nextSibling);
+    } else {
+      badge.appendChild(lines);
+    }
+  }catch(e){}}
+
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', apply, {once:true});
+  } else { apply(); }
+})();
+</script>
 </body>
 </html>
