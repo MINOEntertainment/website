@@ -961,7 +961,7 @@ Our assets feature efficient topology, clean LODs, and high-resolution PBR textu
 <div class="container">
 <h2 class="reveal">Get in Touch</h2>
 <p class="lead reveal" style="transition-delay:.05s">We welcome projects of all sizes — from small tasks to large-scale productions. Quote requests and inquiries are always appreciated, so feel free to reach out anytime. We’ll get back to you within 24 hours.</p>
-<form name="contact" class="form reveal" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+<form class="form reveal" onsubmit="sendMail(event)">
 <input class="input" name="name" placeholder="Name" required="" type="text"/>
 <input class="input" name="email" placeholder="Email" required="" type="email"/>
 <input class="input" name="company" placeholder="Company" type="text"/>
@@ -982,7 +982,36 @@ Our assets feature efficient topology, clean LODs, and high-resolution PBR textu
 
 
 </footer>
+<script>
+// Mobile menu
+const burger = document.getElementById('burger');
+const menu = document.getElementById('menu');
+burger?.addEventListener('click',()=>{
+  const s = menu.classList.toggle('show');
+  burger.setAttribute('aria-expanded', s ? 'true' : 'false');
+});
+// Year
+document.getElementById('year').textContent = new Date().getFullYear();
+// Reveal
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
+// Contact form (mailto demo → 회사 이메일로 변경)
+function sendMail(e){
+  e.preventDefault();
+  const f = e.target;
+  const subject = encodeURIComponent('Project Inquiry — Mino Entertainment');
+  const body = encodeURIComponent(
+`Name: ${f.name.value}
+Email: ${f.email.value}
+Company: ${f.company.value}
+Message:
+${f.message.value}`);
+  window.location.href = `mailto:mino@minoenter.com?subject=${subject}&body=${body}`;
+}
+</script>
 
 <script>
 (function(){
