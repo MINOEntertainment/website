@@ -961,7 +961,9 @@ Our assets feature efficient topology, clean LODs, and high-resolution PBR textu
 <div class="container">
 <h2 class="reveal">Get in Touch</h2>
 <p class="lead reveal" style="transition-delay:.05s">We welcome projects of all sizes — from small tasks to large-scale productions. Quote requests and inquiries are always appreciated, so feel free to reach out anytime. We’ll get back to you within 24 hours.</p>
-<form class="form reveal" onsubmit="sendMail(event)">
+<form name="contact" class="form reveal" data-netlify="true" netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="contact"/>
+  <input type="text" name="bot-field" style="display:none" tabindex="-1" autocomplete="off"/>
 <input class="input" name="name" placeholder="Name" required="" type="text"/>
 <input class="input" name="email" placeholder="Email" required="" type="email"/>
 <input class="input" name="company" placeholder="Company" type="text"/>
@@ -999,12 +1001,6 @@ const io = new IntersectionObserver((entries)=>{
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 // Contact form (mailto demo → 회사 이메일로 변경)
-function sendMail(e){
-  e.preventDefault();
-  const f = e.target;
-  const subject = encodeURIComponent('Project Inquiry — Mino Entertainment');
-  const body = encodeURIComponent(
-`Name: ${f.name.value}
 Email: ${f.email.value}
 Company: ${f.company.value}
 Message:
